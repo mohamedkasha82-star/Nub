@@ -43,7 +43,7 @@ class SupabaseProposalSafetyTests(unittest.TestCase):
 
     def test_rollout_requires_isolation_tests_and_exposure_review(self):
         self.assertIn("two-user isolation tests", self.readme)
-        self.assertIn("not included in supabase's exposed data api schemas", self.readme)
+        self.assertIn("not included in exposed data api schemas", self.readme)
         self.assertIn("explicit deployment approval", self.readme)
 
 
