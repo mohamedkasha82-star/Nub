@@ -5,7 +5,8 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 ## Pages
 - `index.html` — cinematic entry point, project relationship, research paths, summary timeline and methodology.
 - `atlas.html` — expanded knowledge layer: historical chronology, Nile geography, displacement, languages and oral tradition, architecture, contemporary continuity, open questions, and inline source links.
-- `sources.html` — source register, source types, methodological boundaries, and editorial principles.\n- `research.html` — interactive research dossier for Mohamed Kasha’s *Nubian Archives Registry (v1.0)*, including dated findings, methodology, limitations, citation metadata, and next-work plan.
+- `sources.html` — source register, source types, methodological boundaries, and editorial principles.\n- `evidence.html` — searchable evidence register separating supported claims from limits, with institutional standards and scholarly research references.
+- `research.html` — interactive research dossier for Mohamed Kasha’s *Nubian Archives Registry (v1.0)*, including dated findings, methodology, limitations, citation metadata, and next-work plan.
 - `favicon.svg` — original project mark.
 - `.github/workflows/deploy.yml` — isolated GitHub Pages deployment for this repository.
 
