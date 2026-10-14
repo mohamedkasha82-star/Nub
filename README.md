@@ -10,6 +10,7 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 - `listening.html` — bilingual Listening Room with locally generated abstract synthetic sound (no autoplay), explicit distinction between sound design, archival recordings and consented oral history, plus a concise provenance and rights pathway.
 - `fieldwork.html` — bilingual proposed fieldwork protocol for community-led documentation, granular consent, access levels, provenance metadata, interview prompts, and a downloadable JSON record template.
 - `evidence.html` — searchable evidence register separating supported claims from limits, with institutional standards and scholarly research references.
+- `research-map.html` — bilingual interactive research constellation connecting existing atlas topics to relevant evidence entries and open questions. It is a navigational layer, not a claim that linked topics form proven causal relationships.
 - `research.html` — interactive research dossier for Mohamed Kasha’s *Nubian Archives Registry (v1.0)*, including dated findings, methodology, limitations, citation metadata, and next-work plan.
 - `favicon.svg` — original project mark.
 - `.github/workflows/deploy.yml` — isolated GitHub Pages deployment for this repository.
@@ -37,3 +38,7 @@ GitHub Pages workflow deploys this repository independently. Do not connect or o
 ## Research dossier: Nubian Archives Registry (v1.0)
 The dedicated dossier presents the uploaded author manuscript as a preprint/data paper, dated 14 October 2026, with a registry snapshot verified 12 October 2026. It reports the paper’s sample counts and limitations explicitly; it does not describe the sample as a census, claim independent peer review, or invent a DOI. The manuscript notes that a DOI deposit was planned for the future.
 
+## Record schema and responsible contribution
+- `schemas/nub-record.schema.json` — draft JSON Schema for source provenance, claim scope, rights, consent, access restrictions, sensitivity flags, and review state.
+- `schemas/README.md` — implementation guardrails: preserve UNKNOWN states, separate copyright from consent, restrict unresolved community material, and do not overstate review.
+- The schema is not yet connected to ingestion or Supabase and is not a compliance claim, community approval, or evidence of permission for any item.
