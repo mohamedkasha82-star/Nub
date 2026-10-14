@@ -42,3 +42,19 @@ The dedicated dossier presents the uploaded author manuscript as a preprint/data
 - `schemas/nub-record.schema.json` — draft JSON Schema for source provenance, claim scope, rights, consent, access restrictions, sensitivity flags, and review state.
 - `schemas/README.md` — implementation guardrails: preserve UNKNOWN states, separate copyright from consent, restrict unresolved community material, and do not overstate review.
 - The schema is not yet connected to ingestion or Supabase and is not a compliance claim, community approval, or evidence of permission for any item.
+
+## Deterministic schema quality gate
+
+- `scripts/validate_records.py` validates candidate JSON records against the draft schema and checks standard JSON Schema formats.
+- `tests/test_record_schema.py` tests schema validity, required fields, strict enums, date formats, unknown-state preservation, and the distinction between rights and consent.
+- `.github/workflows/validate-record-schema.yml` runs the validator and regression tests for relevant pull requests and main-branch changes.
+- `tests/fixtures/record-valid-unknown.json` is synthetic test data only; it is not a historical item, testimony, or archival evidence.
+
+Run locally with Python 3.12 or compatible:
+```sh
+python -m pip install "jsonschema>=4.23,<5"
+python scripts/validate_records.py tests/fixtures/record-valid-unknown.json
+python -m unittest discover -s tests -v
+```
+
+A passing schema check only establishes structural validity. It does not establish authenticity, rights, consent, permission to publish, community review, or scholarly verification. The fixture intentionally preserves unknown values rather than inventing missing metadata.
