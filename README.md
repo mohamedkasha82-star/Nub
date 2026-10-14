@@ -10,6 +10,7 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 - `listening.html` — bilingual Listening Room with locally generated abstract synthetic sound (no autoplay), explicit distinction between sound design, archival recordings and consented oral history, plus a concise provenance and rights pathway.
 - `fieldwork.html` — bilingual proposed fieldwork protocol for community-led documentation, granular consent, access levels, provenance metadata, interview prompts, and a downloadable JSON record template.
 - `evidence.html` — searchable evidence register separating supported claims from limits, with institutional standards and scholarly research references.
+- `research-map.html` — bilingual interactive research constellation connecting existing atlas topics to relevant evidence entries and open questions. It is a navigational layer, not a claim that linked topics form proven causal relationships.
 - `research.html` — interactive research dossier for Mohamed Kasha’s *Nubian Archives Registry (v1.0)*, including dated findings, methodology, limitations, citation metadata, and next-work plan.
 - `favicon.svg` — original project mark.
 - `.github/workflows/deploy.yml` — isolated GitHub Pages deployment for this repository.
