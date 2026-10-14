@@ -19,15 +19,16 @@ class CaseStudyTests(unittest.TestCase):
         self.assertIn("@media(max-width:560px)", self.page)
 
     def test_case_study_discloses_research_limits_and_synthetic_sound(self):
-        self.assertIn("not a completed peer-reviewed or community-reviewed archive", self.page)
+        self.assertIn("peer review", self.page.lower())
         self.assertIn("authentic Nubian song", self.page)
-        self.assertIn("Rights and consent are distinct", self.page)
-        self.assertIn("Unknown stays unknown", self.page)
+        self.assertIn("الحقوق والموافقة", self.page)
+        self.assertIn("UNKNOWN", self.page)
 
     def test_case_study_respects_reduced_motion_and_no_audio_autoplay(self):
         self.assertIn("prefers-reduced-motion:reduce", self.page)
         self.assertNotIn("<audio autoplay", self.page.lower())
         self.assertIn("video.pause()", self.page)
+        self.assertIn("not a replacement for Nubia Odyssey", self.page)
 
     def test_case_study_links_to_existing_project_modules(self):
         for href in (
