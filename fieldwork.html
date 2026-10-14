@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071714">
+<meta name="description" content="NŪB Fieldwork Protocol: a bilingual, consent-led method for documenting Nubian oral history, photographs, songs, foodways and language with provenance and community agency.">
+<meta property="og:title" content="NŪB — دليل التوثيق الميداني">
+<meta property="og:description" content="من الذاكرة إلى السجل: بروتوكول عملي للتوثيق النوبي المسؤول.">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>NŪB — دليل التوثيق الميداني | Fieldwork Protocol</title>
+<style>
+:root{color-scheme:dark;--bg:#061714;--deep:#0a2520;--panel:#10352d;--ink:#f5f0e5;--muted:#b4c7bd;--aqua:#68d6c0;--clay:#dd7957;--gold:#e6c27b;--line:#dceee31f;--ar:'Alexandria',sans-serif;--en:'Manrope',sans-serif;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.9 var(--ar);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:20;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+a{color:var(--aqua);text-underline-offset:4px}button,input{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+.top{position:relative;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.brand{font:700 1rem var(--en);letter-spacing:.2em;text-decoration:none;color:var(--ink);white-space:nowrap}
+.nav{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap}.nav a{color:var(--muted);font-size:.74rem;text-decoration:none}.nav a:hover{color:var(--aqua)}
+.btn{border:1px solid #68d6c055;border-radius:99px;padding:6px 12px;background:transparent;color:var(--ink);cursor:pointer;font-size:.75rem}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:490px;background:radial-gradient(ellipse at 15% 12%,#cf795322,transparent 32%),radial-gradient(ellipse at 80% 40%,#1f8a7250,transparent 43%),linear-gradient(135deg,#071915,#103b30 57%,#071714);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;z-index:-1;width:min(68vw,720px);aspect-ratio:1;border-radius:50%;border:1px solid #8ce8d133;inset-inline-start:-15%;top:-35%;box-shadow:0 0 0 38px #8ce8d10a,0 0 0 78px #8ce8d108,0 0 0 122px #8ce8d105}
+.hero:after{content:"NŪB";position:absolute;z-index:-1;inset-inline-end:-.02em;bottom:-.42em;font:700 clamp(12rem,37vw,31rem)/.9 var(--en);letter-spacing:-.09em;color:#fff;opacity:.025;pointer-events:none}
+.hero-in{padding:83px 0 76px;max-width:890px}.eyebrow{font:500 .7rem/1.8 var(--en);letter-spacing:.16em;color:var(--aqua);text-transform:uppercase}
+h1{font-size:clamp(2.7rem,7vw,6.4rem);font-weight:400;line-height:1.15;letter-spacing:-.045em;margin:17px 0 22px;max-width:900px}h1 span{color:var(--gold)}
+.hero p{font-size:1rem;color:var(--muted);max-width:740px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 22px}
+.action{display:inline-flex;align-items:center;gap:10px;border:1px solid #68d6c055;border-radius:999px;padding:11px 17px;text-decoration:none;color:var(--ink);font-size:.8rem;transition:background .2s,border-color .2s,transform .2s}
+.action:hover{background:#68d6c217;border-color:var(--aqua);transform:translateY(-2px)}.action.primary{background:var(--aqua);color:#071714;border-color:var(--aqua)}
+.boundary{max-width:800px;border-inline-start:2px solid var(--gold);padding:8px 14px;color:var(--muted);font-size:.78rem}
+.section{padding:76px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);gap:32px;align-items:end;margin-bottom:30px}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:400;letter-spacing:-.035em;line-height:1.25;margin:8px 0}
+.section-head p{font-size:.86rem;color:var(--muted);margin:0;max-width:620px}
+.intro-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.principle{min-height:200px;padding:21px;border:1px solid var(--line);background:linear-gradient(155deg,#10372d,#081915);position:relative;overflow:hidden}
+.principle:after{content:attr(data-no);position:absolute;bottom:-.38em;inset-inline-end:0;font:700 8rem/.9 var(--en);color:#fff;opacity:.035}
+.principle .n{font:500 .65rem var(--en);letter-spacing:.15em;color:var(--gold)}.principle h3{font-size:1.1rem;font-weight:500;margin:13px 0 5px}.principle p{color:var(--muted);font-size:.8rem;margin:0;position:relative;z-index:1}
+.workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative}
+.workflow:before{content:"";position:absolute;top:26px;inset-inline:7%;height:1px;background:linear-gradient(90deg,var(--aqua),var(--gold),var(--clay));opacity:.45}
+.phase{position:relative;z-index:1;padding:0 12px 18px;border-inline-start:1px solid var(--line)}
+.phase-index{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#09231d;border:1px solid #68d6c077;color:var(--gold);font:600 .9rem var(--en);margin-bottom:17px;box-shadow:0 0 0 7px var(--bg)}
+.phase h3{font-size:1.08rem;font-weight:500;margin:0 0 8px}.phase p{font-size:.79rem;color:var(--muted);margin:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{border:1px solid var(--line);padding:23px;background:linear-gradient(155deg,#0d3027,#081a16);min-width:0}
+.panel h3{margin:0 0 10px;font-size:1.2rem;font-weight:500}.panel p,.panel li{color:var(--muted);font-size:.82rem}.panel ul{padding-inline-start:20px;margin-bottom:0}.panel li+li{margin-top:6px}
+.consent-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}.check{display:flex;align-items:flex-start;gap:10px;padding:13px;border:1px solid var(--line);background:#071b17;font-size:.79rem;cursor:pointer}
+.check input{flex:0 0 auto;margin-top:6px;accent-color:var(--aqua);width:17px;height:17px}.check span{color:var(--muted)}.check:has(input:checked){border-color:#68d6c077;background:#0b2a22}.check input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.progressline{height:4px;background:#e3eee315;border-radius:5px;overflow:hidden;margin:15px 0 8px}.progressline span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--aqua),var(--gold));transition:width .25s}.progress-copy{font-size:.73rem;color:var(--muted)}.statusline{color:var(--gold)}
+.matrix-wrap{overflow-x:auto;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:760px;background:#091d18;font-size:.78rem}th,td{text-align:start;vertical-align:top;padding:15px;border-bottom:1px solid var(--line);border-inline-end:1px solid var(--line)}th{background:#10362c;color:var(--gold);font-weight:500}td{color:var(--muted)}tbody tr:hover{background:#68d6c209}.tag{display:inline-flex;padding:3px 8px;border-radius:99px;border:1px solid #68d6c044;color:var(--aqua);font-size:.67rem;white-space:nowrap}.tag.gold{border-color:#e6c27b55;color:var(--gold)}.tag.clay{border-color:#dd795755;color:#f0a185}
+.codebox{border:1px solid var(--line);background:#04110f;overflow:hidden}.codehead{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;padding:12px 16px;background:#0e2c24;border-bottom:1px solid var(--line)}.codehead strong{font-weight:500;font-size:.8rem}.download{padding:7px 11px;border-radius:8px;background:var(--aqua);border:0;color:#071714;font-size:.75rem;font-weight:700;cursor:pointer}.codebox pre{margin:0;padding:22px;overflow:auto;color:#c0e6d7;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;direction:ltr;text-align:left;white-space:pre}
+.question-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.question{border:1px solid var(--line);padding:19px;background:#0a241e}.question strong{display:block;color:var(--gold);font-size:.81rem;margin-bottom:8px}.question p{font-size:.8rem;color:var(--muted);margin:0}
+.source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.source{display:flex;flex-direction:column;align-items:flex-start;border:1px solid var(--line);padding:19px;background:#0a241e;min-width:0}.source h3{font-weight:500;font-size:1rem;margin:0 0 7px}.source p{font-size:.79rem;color:var(--muted);margin:0 0 12px}.source a{margin-top:auto;font-size:.76rem}
+.footer{padding:30px 0 48px;color:#b4c7bd99;font-size:.74rem}.footer-links{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:15px}.footer-links a{color:var(--muted);text-decoration:none}
+body.motion-ready .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}body.motion-ready .reveal.in{opacity:1;transform:none}.progress-top{height:2px;background:transparent;position:fixed;z-index:50;top:0;inset-inline:0}.progress-top span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--aqua),var(--gold),var(--clay))}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(max-width:900px){.intro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:25px}.workflow:before{display:none}.section-head{grid-template-columns:1fr;gap:10px}}
+@media(max-width:620px){.wrap{width:calc(100% - 28px)}.top{align-items:flex-start}.nav{gap:8px;max-width:245px}.nav a{font-size:.67rem}.hero-in{padding:58px 0}.section{padding:52px 0}.intro-grid,.workflow,.two-col,.consent-grid,.question-grid,.source-list{grid-template-columns:1fr}.phase{padding-bottom:22px;min-height:0}.phase-index{margin-bottom:8px}.principle{min-height:150px}.panel{padding:18px}.codebox pre{font-size:11px;padding:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}body.motion-ready .reveal,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress-top" aria-hidden="true"><span id="readProgress"></span></div>
+<header class="wrap top">
+  <a class="brand" href="./index.html" aria-label="NŪB home">NŪB</a>
+  <nav class="nav" aria-label="التنقل الرئيسي">
+    <a href="./index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="./atlas.html" data-ar="الأطلس" data-en="Atlas">الأطلس</a>
+    <a href="./culture.html" data-ar="التراث الحي" data-en="Living heritage">التراث الحي</a>
+    <a href="./sources.html" data-ar="المصادر" data-en="Sources">المصادر</a>
+    <a href="./research.html" data-ar="البحث" data-en="Research">البحث</a>
+    <button class="btn" id="lang" type="button" aria-label="Switch language">EN</button>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="eyebrow">NŪB / FIELDWORK PROTOCOL / 01</div>
+    <h1 data-ar="من الذاكرة إلى السجل،<br><span>بلا محوٍ للصوت.</span>" data-en="From memory to record,<br><span>without erasing the voice.</span>">من الذاكرة إلى السجل،<br><span>بلا محوٍ للصوت.</span></h1>
+    <p data-ar="دليل عملي لجمع الصور والأغاني والكلمات والوصفات والشهادات النوبية، مع توثيق المصدر وحقوق الاستخدام وسياق الرواية وقرار أصحابها بشأن ما يُحفظ وما يُتاح. هذه مواصفات عمل مقترحة للمنصة، وليست ادعاءً بأن مراجعة مجتمعية شاملة قد أُنجزت." data-en="A practical guide to documenting Nubian photographs, songs, words, recipes and testimonies while recording provenance, usage rights, narrative context and contributors’ decisions about preservation and access. This is a proposed protocol for the platform—not a claim that comprehensive community review has already taken place.">دليل عملي لجمع الصور والأغاني والكلمات والوصفات والشهادات النوبية، مع توثيق المصدر وحقوق الاستخدام وسياق الرواية وقرار أصحابها بشأن ما يُحفظ وما يُتاح. هذه مواصفات عمل مقترحة للمنصة، وليست ادعاءً بأن مراجعة مجتمعية شاملة قد أُنجزت.</p>
+    <div class="actions"><a class="action primary" href="#workflow" data-ar="ابدأ دورة التوثيق ↘" data-en="Explore the documentation cycle ↘">ابدأ دورة التوثيق ↘</a><a class="action" href="#metadata" data-ar="حمّل قالب بيانات السجل ↓" data-en="Download the record template ↓">حمّل قالب بيانات السجل ↓</a></div>
+    <div class="boundary" data-ar="مبدأ أساسي: إتاحة الملف لا تعني تلقائيًا الإذن بإعادة نشره، وموافقة شخص على المقابلة لا تعني موافقته على كل استخدام لاحق." data-en="Core rule: access to a file does not automatically grant republication rights, and agreeing to an interview does not mean agreeing to every future use.">مبدأ أساسي: إتاحة الملف لا تعني تلقائيًا الإذن بإعادة نشره، وموافقة شخص على المقابلة لا تعني موافقته على كل استخدام لاحق.</div>
+  </div>
+</section>
+<section class="section">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">01 / THE ETHICAL LENS</div><h2 data-ar="أربع قواعد تحمي <span>المعرفة وأصحابها.</span>" data-en="Four rules protect <span>knowledge and its holders.</span>">أربع قواعد تحمي <span>المعرفة وأصحابها.</span></h2></div><p data-ar="لا تكفي الدقة التقنية إن كان المجتمع لا يملك دورًا حقيقيًا في القرار. تستلهم هذه الطبقة مبادئ اليونسكو للأخلاقيات وممارسات التاريخ الشفهي، مع ضرورة مواءمتها بالحوار مع المشاركين النوبيين أنفسهم." data-en="Technical accuracy is not enough if communities have no meaningful role in decisions. This layer draws on UNESCO’s ethical principles and oral-history practice, while requiring adaptation through dialogue with Nubian contributors themselves.">لا تكفي الدقة التقنية إن كان المجتمع لا يملك دورًا حقيقيًا في القرار. تستلهم هذه الطبقة مبادئ اليونسكو للأخلاقيات وممارسات التاريخ الشفهي، مع ضرورة مواءمتها بالحوار مع المشاركين النوبيين أنفسهم.</p></div>
+  <div class="intro-grid">
+   <article class="principle reveal" data-no="01"><div class="n">CARE / C</div><h3 data-ar="منفعة جماعية" data-en="Collective benefit">منفعة جماعية</h3><p data-ar="ينبغي أن تعود المعرفة الموثقة بالنفع على أصحابها ومجتمعاتهم، لا على المنصة أو الباحث وحده." data-en="Documented knowledge should benefit its holders and communities, not only the platform or researcher.">ينبغي أن تعود المعرفة الموثقة بالنفع على أصحابها ومجتمعاتهم، لا على المنصة أو الباحث وحده.</p></article>
+   <article class="principle reveal" data-no="02"><div class="n">CARE / A</div><h3 data-ar="حق التحكم" data-en="Authority to control">حق التحكم</h3><p data-ar="يشارك الناس في تحديد النسب والإتاحة والقيود وإمكانية السحب أو التعديل وفق الاتفاق." data-en="Contributors help determine attribution, access, restrictions and agreed withdrawal or revision options.">يشارك الناس في تحديد النسب والإتاحة والقيود وإمكانية السحب أو التعديل وفق الاتفاق.</p></article>
+   <article class="principle reveal" data-no="03"><div class="n">CARE / R</div><h3 data-ar="مسؤولية مستمرة" data-en="Ongoing responsibility">مسؤولية مستمرة</h3><p data-ar="يبقى سجل المصدر والاستعمال والتعديل واضحًا، ويمكن تفسير القرارات ومراجعتها." data-en="Sources, uses and changes remain traceable, and decisions can be explained and reviewed.">يبقى سجل المصدر والاستعمال والتعديل واضحًا، ويمكن تفسير القرارات ومراجعتها.</p></article>
+   <article class="principle reveal" data-no="04"><div class="n">CARE / E</div><h3 data-ar="تقليل الضرر" data-en="Ethics and harm reduction">تقليل الضرر</h3><p data-ar="الخصوصية والمعرفة المقيدة والحساسية العائلية أو المكانية قد تستلزم عدم النشر، حتى مع اكتمال الملف." data-en="Privacy, restricted knowledge and family or location sensitivities may require non-public access, even when a file is complete.">الخصوصية والمعرفة المقيدة والحساسية العائلية أو المكانية قد تستلزم عدم النشر، حتى مع اكتمال الملف.</p></article>
+  </div>
+ </div>
+</section>
+<section class="section" id="workflow">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">02 / THE DOCUMENTATION CYCLE</div><h2 data-ar="خمس مراحل، <span>من أول تواصل إلى الإتاحة.</span>" data-en="Five stages, <span>from first contact to access.</span>">خمس مراحل، <span>من أول تواصل إلى الإتاحة.</span></h2></div><p data-ar="كل مرحلة لها سجل ومسؤول وقرار واضح. لا تتحول المساهمة إلى مادة منشورة لمجرد وصولها؛ فالمراجعة والتوثيق جزء من عملية الحفظ." data-en="Each stage has a record, an owner and an explicit decision. A contribution does not become publishable merely because it has been received; review and documentation are part of preservation.">كل مرحلة لها سجل ومسؤول وقرار واضح. لا تتحول المساهمة إلى مادة منشورة لمجرد وصولها؛ فالمراجعة والتوثيق جزء من عملية الحفظ.</p></div>
+  <div class="workflow">
+   <article class="phase reveal"><div class="phase-index">01</div><h3 data-ar="تحديد النطاق" data-en="Define scope">تحديد النطاق</h3><p data-ar="ما السؤال؟ من أصحاب المعرفة؟ ما الذي لا ينبغي جمعه أو نشره؟" data-en="What is the question? Who holds the knowledge? What should not be collected or released?">ما السؤال؟ من أصحاب المعرفة؟ ما الذي لا ينبغي جمعه أو نشره؟</p></article>
+   <article class="phase reveal"><div class="phase-index">02</div><h3 data-ar="موافقة مستنيرة" data-en="Informed consent">موافقة مستنيرة</h3><p data-ar="اشرح الغرض والاستخدامات والقيود، وافصل الموافقة على التسجيل عن النشر." data-en="Explain purpose, uses and limits; separate consent to record from consent to publish.">اشرح الغرض والاستخدامات والقيود، وافصل الموافقة على التسجيل عن النشر.</p></article>
+   <article class="phase reveal"><div class="phase-index">03</div><h3 data-ar="التقاط أمين" data-en="Faithful capture">التقاط أمين</h3><p data-ar="احفظ الملف الأصلي وبياناته، ولا تحذف التردد أو الاختلاف أو لهجة المتحدث من أجل سرد أسهل." data-en="Keep the original file and metadata; do not erase uncertainty, variation or a speaker’s language variety for a tidier narrative.">احفظ الملف الأصلي وبياناته، ولا تحذف التردد أو الاختلاف أو لهجة المتحدث من أجل سرد أسهل.</p></article>
+   <article class="phase reveal"><div class="phase-index">04</div><h3 data-ar="مراجعة وإسناد" data-en="Review and attribute">مراجعة وإسناد</h3><p data-ar="تحقق من الادعاءات، وأتح لصاحب الشهادة مراجعة النص كلما أمكن." data-en="Check claims and, where possible, let the contributor review the text derived from their testimony.">تحقق من الادعاءات، وأتح لصاحب الشهادة مراجعة النص كلما أمكن.</p></article>
+   <article class="phase reveal"><div class="phase-index">05</div><h3 data-ar="إتاحة مسؤولة" data-en="Responsible access">إتاحة مسؤولة</h3><p data-ar="اختر مستوى الوصول وفق الاتفاق والحقوق والمخاطر، وسجّل أي تغيير لاحق." data-en="Choose access level according to consent, rights and risk, and log later changes.">اختر مستوى الوصول وفق الاتفاق والحقوق والمخاطر، وسجّل أي تغيير لاحق.</p></article>
+  </div>
+ </div>
+</section>
+<section class="section">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">03 / CONSENT IS GRANULAR</div><h2 data-ar="الموافقة ليست <span>مربعًا واحدًا.</span>" data-en="Consent is not <span>a single checkbox.</span>">الموافقة ليست <span>مربعًا واحدًا.</span></h2></div><p data-ar="استخدم القائمة كفحص تدريبي قبل المقابلة أو النشر. لا تحفظ الصفحة إجاباتك ولا ترسلها؛ إنها أداة محلية للتذكير فقط، وليست نموذج موافقة قانونيًا." data-en="Use this checklist as a pre-interview or pre-publication prompt. This page does not save or send your answers; it is a local reminder, not a legal consent form.">استخدم القائمة كفحص تدريبي قبل المقابلة أو النشر. لا تحفظ الصفحة إجاباتك ولا ترسلها؛ إنها أداة محلية للتذكير فقط، وليست نموذج موافقة قانونيًا.</p></div>
+  <div class="two-col">
+   <article class="panel reveal"><h3 data-ar="ما الذي يجب شرحه للمشارك؟" data-en="What should be explained?">ما الذي يجب شرحه للمشارك؟</h3><p data-ar="بلغة واضحة، ومن دون ضغط أو وعود لا يمكن ضمانها:" data-en="In plain language, without pressure or promises you cannot guarantee:">بلغة واضحة، ومن دون ضغط أو وعود لا يمكن ضمانها:</p>
+    <div class="consent-grid" id="consentChecklist">
+     <label class="check"><input type="checkbox"><span data-ar="هدف المشروع ولماذا نطلب هذه المادة" data-en="Project purpose and why this material is requested">هدف المشروع ولماذا نطلب هذه المادة</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="هل التسجيل صوتي أو مرئي أو صورة ثابتة" data-en="Whether recording is audio, video or still photography">هل التسجيل صوتي أو مرئي أو صورة ثابتة</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="أين سيُحفظ الملف ومن يمكنه الوصول إليه" data-en="Where the file will be stored and who may access it">أين سيُحفظ الملف ومن يمكنه الوصول إليه</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="هل يُسمح بالنشر العام أم بالاستخدام البحثي المحدود" data-en="Whether public release or restricted research use is allowed">هل يُسمح بالنشر العام أم بالاستخدام البحثي المحدود</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="اسم النسب المطلوب أو الرغبة في إخفاء الهوية" data-en="Preferred attribution or a request for anonymity">اسم النسب المطلوب أو الرغبة في إخفاء الهوية</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="الحقوق والترخيص وإمكانية الاقتباس أو إعادة الاستخدام" data-en="Rights, license and permission for quotation or reuse">الحقوق والترخيص وإمكانية الاقتباس أو إعادة الاستخدام</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="إمكانية مراجعة النص أو تقييد أجزاء من التسجيل" data-en="Opportunity to review text or restrict parts of a recording">إمكانية مراجعة النص أو تقييد أجزاء من التسجيل</span></label>
+     <label class="check"><input type="checkbox"><span data-ar="طريقة التواصل بشأن التصحيح أو السحب المتفق عليه" data-en="How to request a correction or agreed withdrawal">طريقة التواصل بشأن التصحيح أو السحب المتفق عليه</span></label>
+    </div>
+    <div class="progressline" role="progressbar" aria-label="Consent checklist progress" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="consentProgress"><span id="consentBar"></span></div>
+    <div class="progress-copy"><span id="consentCount">0 / 8</span> · <span class="statusline" id="consentStatus" data-ar="قائمة تذكيرية فقط؛ وثّق الموافقة الفعلية بصورة مستقلة." data-en="Reminder only; document actual consent separately.">قائمة تذكيرية فقط؛ وثّق الموافقة الفعلية بصورة مستقلة.</span></div>
+   </article>
+   <article class="panel reveal"><h3 data-ar="مستويات الإتاحة المقترحة" data-en="Proposed access levels">مستويات الإتاحة المقترحة</h3><p data-ar="الإتاحة قرار منفصل عن التحقق من المعلومة. ويمكن إعادة تقييمها لاحقًا بحسب الاتفاق والمخاطر والقدرة على تنفيذ القيود." data-en="Access is a separate decision from factual verification. It may be reassessed later in light of agreements, risks and the ability to enforce restrictions.">الإتاحة قرار منفصل عن التحقق من المعلومة. ويمكن إعادة تقييمها لاحقًا بحسب الاتفاق والمخاطر والقدرة على تنفيذ القيود.</p>
+    <ul><li><span class="tag">PUBLIC</span> — <span data-ar="متاح للعامة بحقوق موثقة وتعليق مناسب." data-en="Publicly available with documented rights and appropriate description.">متاح للعامة بحقوق موثقة وتعليق مناسب.</span></li>
+    <li><span class="tag gold">COMMUNITY</span> — <span data-ar="متاح للمجتمع أو للمشاركين المحددين وفق آلية عملية قابلة للتنفيذ." data-en="Available to a community or named participants through an enforceable access process.">متاح للمجتمع أو للمشاركين المحددين وفق آلية عملية قابلة للتنفيذ.</span></li>
+    <li><span class="tag clay">RESTRICTED</span> — <span data-ar="محفوظ دون نشر عام؛ يتطلب إذنًا إضافيًا أو قرارًا من أصحاب المعرفة." data-en="Preserved without public release; further permission or a holder’s decision is required.">محفوظ دون نشر عام؛ يتطلب إذنًا إضافيًا أو قرارًا من أصحاب المعرفة.</span></li>
+    <li><span class="tag">WITHHELD</span> — <span data-ar="لا يُجمع أو لا يُحفظ عند غياب الموافقة أو ارتفاع المخاطر." data-en="Not collected or not retained where consent is absent or risk is high.">لا يُجمع أو لا يُحفظ عند غياب الموافقة أو ارتفاع المخاطر.</span></li></ul>
+   </article>
+  </div>
+ </div>
+</section>
+<section class="section" id="metadata">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">04 / PROVENANCE SCHEMA</div><h2 data-ar="كل مادة لها <span>هوية قابلة للتتبّع.</span>" data-en="Every item needs <span>traceable identity.</span>">كل مادة لها <span>هوية قابلة للتتبّع.</span></h2></div><p data-ar="هذا القالب يساعد على عدم فقدان المكان والتاريخ وصاحب المادة والموافقة والحقوق عند تداول الملفات. الحقول الفارغة تبقى UNKNOWN بدل ملئها بالتخمين. القالب مواصفة أولية مقترحة ويمكن أن يتغير بعد المراجعة المجتمعية والأرشيفية." data-en="This template helps preserve place, date, contributor, consent and rights when files move between people and repositories. Empty fields remain UNKNOWN rather than being guessed. It is a proposed initial schema and should be reviewed with community and archival partners.">هذا القالب يساعد على عدم فقدان المكان والتاريخ وصاحب المادة والموافقة والحقوق عند تداول الملفات. الحقول الفارغة تبقى UNKNOWN بدل ملئها بالتخمين. القالب مواصفة أولية مقترحة ويمكن أن يتغير بعد المراجعة المجتمعية والأرشيفية.</p></div>
+  <div class="matrix-wrap reveal"><table><thead><tr><th data-ar="المجال" data-en="Field">المجال</th><th data-ar="أمثلة على البيانات" data-en="Examples">أمثلة على البيانات</th><th data-ar="قاعدة التوثيق" data-en="Documentation rule">قاعدة التوثيق</th></tr></thead><tbody>
+   <tr><td>Identity</td><td>record_id, item_type, title_original</td><td data-ar="معرّف ثابت؛ لا تستخدم الاسم الشخصي بوصفه معرّفًا وحيدًا." data-en="Use a stable identifier; never rely on a personal name alone.">معرّف ثابت؛ لا تستخدم الاسم الشخصي بوصفه معرّفًا وحيدًا.</td></tr>
+   <tr><td>Time & place</td><td>date_created, date_recorded, locality, date_precision</td><td data-ar="ميّز تاريخ التقاط المادة من تاريخ الحدث الذي تصفه. وثّق درجة اليقين." data-en="Separate capture date from the date of the event described; record precision.">ميّز تاريخ التقاط المادة من تاريخ الحدث الذي تصفه. وثّق درجة اليقين.</td></tr>
+   <tr><td>Language & context</td><td>language, local_variant, occasion, summary</td><td data-ar="اكتب الاسم المحلي كما نطقه صاحبه إذا أذن، وأبقِ التهجئات البديلة." data-en="Record local terms as provided with permission and preserve spelling variants.">اكتب الاسم المحلي كما نطقه صاحبه إذا أذن، وأبقِ التهجئات البديلة.</td></tr>
+   <tr><td>Provenance</td><td>contributor_credit, source_url, custodian, file_checksum</td><td data-ar="فرّق بين صاحب المادة والمصور والمفهرس والجهة الحافظة." data-en="Distinguish contributor, photographer, cataloguer and holding institution.">فرّق بين صاحب المادة والمصور والمفهرس والجهة الحافظة.</td></tr>
+   <tr><td>Rights & consent</td><td>consent_status, rights_holder, license, access_level</td><td data-ar="لا تستنتج رخصة من مجرد عرض الملف على الإنترنت. احفظ الدليل على الإذن." data-en="Do not infer a license from online visibility; preserve evidence of permission.">لا تستنتج رخصة من مجرد عرض الملف على الإنترنت. احفظ الدليل على الإذن.</td></tr>
+   <tr><td>Evidence & review</td><td>claim_status, evidence_links, review_date, reviewer_notes</td><td data-ar="التحقق من الادعاء شيء، والإذن بالنشر شيء آخر. سجّل كليهما." data-en="Factual verification and publication permission are separate decisions; record both.">التحقق من الادعاء شيء، والإذن بالنشر شيء آخر. سجّل كليهما.</td></tr>
+  </tbody></table></div>
+  <div class="codebox reveal" style="margin-top:18px"><div class="codehead"><strong data-ar="قالب JSON فارغ — مثال بيانات وصفية لا سجل حقيقي" data-en="Blank JSON template — metadata example, not a real record">قالب JSON فارغ — مثال بيانات وصفية لا سجل حقيقي</strong><button class="download" type="button" id="downloadTemplate" data-ar="حمّل قالب JSON ↘" data-en="Download JSON template ↘">حمّل قالب JSON ↘</button></div><pre id="jsonPreview">{
+  "record_id": "NUB-YYYY-0001",
+  "item_type": "photograph | audio | oral_history | recipe | vocabulary | document",
+  "title_original": "UNKNOWN",
+  "title_arabic": "UNKNOWN",
+  "language": ["UNKNOWN"],
+  "local_variant": "UNKNOWN",
+  "locality": "UNKNOWN",
+  "date_created": "UNKNOWN",
+  "date_recorded": "UNKNOWN",
+  "date_precision": "UNKNOWN",
+  "contributor_credit": "UNKNOWN",
+  "custodian": "UNKNOWN",
+  "source_url": "UNKNOWN",
+  "rights_holder": "UNKNOWN",
+  "license": "UNKNOWN",
+  "consent_status": "NEEDS_REVIEW",
+  "access_level": "RESTRICTED",
+  "claim_status": "UNKNOWN",
+  "evidence_links": [],
+  "review_date": "UNKNOWN",
+  "reviewer_notes": "UNKNOWN"
+}</pre></div>
+  <p class="boundary" data-ar="لا تضع بيانات الاتصال الخاصة أو ملفات الموافقة الموقعة داخل سجل عام. يجب حفظ المستندات الحساسة في مساحة منفصلة ذات صلاحيات محددة." data-en="Do not place private contact details or signed consent documents in a public record. Sensitive documents must be stored separately with access controls.">لا تضع بيانات الاتصال الخاصة أو ملفات الموافقة الموقعة داخل سجل عام. يجب حفظ المستندات الحساسة في مساحة منفصلة ذات صلاحيات محددة.</p>
+ </div>
+</section>
+<section class="section">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">05 / INTERVIEW PRACTICE</div><h2 data-ar="أسئلة تفتح الذاكرة، <span>ولا تفرض إجابة.</span>" data-en="Questions that open memory, <span>not dictate an answer.</span>">أسئلة تفتح الذاكرة، <span>ولا تفرض إجابة.</span></h2></div><p data-ar="هذه أمثلة تدريبية وليست استبيانًا موحدًا. ينبغي اختبارها مع متحدثين ومراجعين نوبيين وتعديلها وفق اللهجة والعمر والمناسبة، وترك مساحة للأسئلة التي يختار الراوي طرحها." data-en="These are training prompts, not a universal questionnaire. Test and adapt them with Nubian speakers and reviewers for language variety, age and context, and leave room for narrators to raise their own questions.">هذه أمثلة تدريبية وليست استبيانًا موحدًا. ينبغي اختبارها مع متحدثين ومراجعين نوبيين وتعديلها وفق اللهجة والعمر والمناسبة، وترك مساحة للأسئلة التي يختار الراوي طرحها.</p></div>
+  <div class="question-grid">
+   <article class="question reveal"><strong>01 / PLACE</strong><p data-ar="ما الاسم الذي تستخدمه للمكان؟ وهل يتغير الاسم بين اللغة النوبية والعربية أو بين الأجيال؟" data-en="What name do you use for this place? Does it differ between Nubian and Arabic, or across generations?">ما الاسم الذي تستخدمه للمكان؟ وهل يتغير الاسم بين اللغة النوبية والعربية أو بين الأجيال؟</p></article>
+   <article class="question reveal"><strong>02 / MEMORY</strong><p data-ar="ما التفاصيل التي تتذكرها بنفسك، وما الذي سمعته من شخص آخر؟" data-en="Which details do you remember directly, and which did you hear from someone else?">ما التفاصيل التي تتذكرها بنفسك، وما الذي سمعته من شخص آخر؟</p></article>
+   <article class="question reveal"><strong>03 / CHANGE</strong><p data-ar="ما الذي تغيّر بعد الانتقال، وما الذي استمر أو اتخذ شكلًا جديدًا؟" data-en="What changed after relocation, and what continued or took a new form?">ما الذي تغيّر بعد الانتقال، وما الذي استمر أو اتخذ شكلًا جديدًا؟</p></article>
+   <article class="question reveal"><strong>04 / LANGUAGE</strong><p data-ar="هل توجد كلمة أو عبارة تفضل قولها بلغتك؟ وكيف تحب أن نكتبها أو ننطقها؟" data-en="Is there a word or phrase you prefer to say in your language? How would you like it written or pronounced?">هل توجد كلمة أو عبارة تفضل قولها بلغتك؟ وكيف تحب أن نكتبها أو ننطقها؟</p></article>
+   <article class="question reveal"><strong>05 / CONTEXT</strong><p data-ar="في أي مناسبة تُستخدم هذه الأغنية أو الوصفة أو الحرفة؟ وهل توجد أجزاء لا ينبغي تسجيلها؟" data-en="On what occasion is this song, recipe or craft used? Are there parts that should not be recorded?">في أي مناسبة تُستخدم هذه الأغنية أو الوصفة أو الحرفة؟ وهل توجد أجزاء لا ينبغي تسجيلها؟</p></article>
+   <article class="question reveal"><strong>06 / ACCESS</strong><p data-ar="ما الذي تريد أن يراه الجمهور؟ وما الذي تفضل إبقاءه للعائلة أو المجتمع أو خارج الأرشيف؟" data-en="What would you like the public to see? What should remain with family, community, or outside the archive?">ما الذي تريد أن يراه الجمهور؟ وما الذي تفضل إبقاءه للعائلة أو المجتمع أو خارج الأرشيف؟</p></article>
+  </div>
+ </div>
+</section>
+<section class="section" id="sources">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">06 / METHOD REFERENCES</div><h2 data-ar="منهج مفتوح <span>ومصادر قابلة للفحص.</span>" data-en="An open method, <span>sources anyone can inspect.</span>">منهج مفتوح <span>ومصادر قابلة للفحص.</span></h2></div><p data-ar="هذه مراجع منهجية عامة نستخدمها لتطوير البروتوكول، وليست بديلًا عن الموافقة المحلية أو مراجعة الباحثين والمشاركين. تختلف التقاليد القانونية والمؤسسية حسب المشروع والمكان." data-en="These general methodological references inform this protocol but do not replace local consent or review by researchers and contributors. Legal and institutional requirements vary by project and location.">هذه مراجع منهجية عامة نستخدمها لتطوير البروتوكول، وليست بديلًا عن الموافقة المحلية أو مراجعة الباحثين والمشاركين. تختلف التقاليد القانونية والمؤسسية حسب المشروع والمكان.</p></div>
+  <div class="source-list">
+   <article class="source reveal"><div class="eyebrow">UNESCO / ETHICS</div><h3 data-ar="المبادئ الأخلاقية لصون التراث الثقافي غير المادي" data-en="Ethical Principles for Safeguarding Intangible Cultural Heritage">المبادئ الأخلاقية لصون التراث الثقافي غير المادي</h3><p data-ar="تؤكد أن للمجتمعات والمجموعات والأفراد الدور الأساسي في صون تراثهم، وأن التفاعل معهم ينبغي أن يقوم على تعاون شفاف وموافقة حرة ومسبقة ومستمرة ومستنيرة." data-en="Affirms the primary role of communities, groups and individuals in safeguarding their heritage and calls for transparent collaboration and free, prior, sustained and informed consent.">تؤكد أن للمجتمعات والمجموعات والأفراد الدور الأساسي في صون تراثهم، وأن التفاعل معهم ينبغي أن يقوم على تعاون شفاف وموافقة حرة ومسبقة ومستمرة ومستنيرة.</p><a href="https://ich.unesco.org/en/ethics-and-ich-00866" target="_blank" rel="noopener noreferrer" data-ar="اقرأ المبادئ الرسمية ↗" data-en="Read the official principles ↗">اقرأ المبادئ الرسمية ↗</a></article>
+   <article class="source reveal"><div class="eyebrow">ORAL HISTORY ASSOCIATION</div><h3 data-ar="أفضل ممارسات التاريخ الشفهي" data-en="Oral History Best Practices">أفضل ممارسات التاريخ الشفهي</h3><p data-ar="إرشادات حول التحضير والموافقة والمقابلة والحفظ والإتاحة، بما في ذلك إتاحة مراجعة الراوي للنص أو التسجيل كلما أمكن، واحترام قيود الوصول المتفق عليها." data-en="Guidance on preparation, consent, interviewing, preservation and access, including narrator review when possible and respect for agreed access restrictions.">إرشادات حول التحضير والموافقة والمقابلة والحفظ والإتاحة، بما في ذلك إتاحة مراجعة الراوي للنص أو التسجيل كلما أمكن، واحترام قيود الوصول المتفق عليها.</p><a href="https://oralhistory.org/best-practices/" target="_blank" rel="noopener noreferrer" data-ar="افتح الدليل ↗" data-en="Open the guidance ↗">افتح الدليل ↗</a></article>
+   <article class="source reveal"><div class="eyebrow">GLOBAL INDIGENOUS DATA ALLIANCE</div><h3>CARE Principles for Indigenous Data Governance</h3><p data-ar="إطار مكمل لمبادئ الانفتاح التقني، يركز على المنفعة الجماعية وحق التحكم والمسؤولية والأخلاقيات. نستشهد به كإطار للحوكمة، لا بوصفه اعتمادًا جاهزًا للنوبة." data-en="A complement to technical openness, focused on collective benefit, authority to control, responsibility and ethics. It is cited as a governance framework, not as an existing Nubian endorsement.">إطار مكمل لمبادئ الانفتاح التقني، يركز على المنفعة الجماعية وحق التحكم والمسؤولية والأخلاقيات. نستشهد به كإطار للحوكمة، لا بوصفه اعتمادًا جاهزًا للنوبة.</p><a href="https://www.auckland.ac.nz/en/research/research-resources/research-data/research-data-policies-ethics-requirements/care-principles-indigenous-data.html" target="_blank" rel="noopener noreferrer">Read the principles ↗</a></article>
+   <article class="source reveal"><div class="eyebrow">UNIVERSITY OF BASEL / 1900 EXPEDITION</div><h3 data-ar="صور ومذكرات من أمادا ووادي حلفا" data-en="Photographs and notes from Amada and Wadi Halfa">صور ومذكرات من أمادا ووادي حلفا</h3><p data-ar="مثال على مادة أرشيفية تتضمن صورًا وملاحظات ميدانية، مع سياق لاحق لإعادة التوطين. نصل إلى سجل الجهة الحافظة ولا نعيد رفع الصور ما لم تُحسم حقوق كل مادة." data-en="An example of archival photographs and field notes with later resettlement context. We link to the holding institution and do not re-upload images until item-specific rights are clear.">مثال على مادة أرشيفية تتضمن صورًا وملاحظات ميدانية، مع سياق لاحق لإعادة التوطين. نصل إلى سجل الجهة الحافظة ولا نعيد رفع الصور ما لم تُحسم حقوق كل مادة.</p><a href="https://daw.philhist.unibas.ch/en/nubia/4/" target="_blank" rel="noopener noreferrer" data-ar="افتح سجل جامعة بازل ↗" data-en="Open the University of Basel record ↗">افتح سجل جامعة بازل ↗</a></article><article class="source reveal"><div class="eyebrow">SMITHSONIAN / ARCHIVE RIGHTS</div><h3 data-ar="الأرشيف النوبي والصور التاريخية" data-en="Nubian archive and historical photographs">الأرشيف النوبي والصور التاريخية</h3><p data-ar="مثال عملي على ضرورة فصل السجل الأرشيفي عن إذن النشر: توثق بطاقة سميثسونيان قرية نوبية مهددة بالغمر عام 1965، لكنها تشترط إذنًا مسبقًا لإعادة إنتاج الصورة." data-en="A practical example of separating an archival record from republication permission: a Smithsonian record documents a Nubian village threatened by inundation in 1965 but requires prior permission to reproduce the image.">مثال عملي على ضرورة فصل السجل الأرشيفي عن إذن النشر: توثق بطاقة سميثسونيان قرية نوبية مهددة بالغمر عام 1965، لكنها تشترط إذنًا مسبقًا لإعادة إنتاج الصورة.</p><a href="https://africa.si.edu/archives/object/sova-eepa-1973-001-ref9956" target="_blank" rel="noopener noreferrer" data-ar="افتح السجل الأصلي ↗" data-en="Open the original record ↗">افتح السجل الأصلي ↗</a></article>
+  </div>
+ </div>
+</section>
+</main>
+<footer class="wrap footer"><div class="footer-links"><a href="./index.html">NŪB</a><a href="./atlas.html" data-ar="الأطلس" data-en="Atlas">الأطلس</a><a href="./culture.html" data-ar="التراث الحي" data-en="Living heritage">التراث الحي</a><a href="./sources.html" data-ar="غرفة المصادر" data-en="Source room">غرفة المصادر</a><a href="./evidence.html" data-ar="سجل الأدلة" data-en="Evidence register">سجل الأدلة</a></div><p data-ar="هذا البروتوكول مسودة تشغيلية أولية. لا يمثل مراجعة قانونية، ولا اعتمادًا أخلاقيًا مؤسسيًا، ولا مراجعة مجتمعية نوبيّة مكتملة. ينبغي تكييفه بمشاركة أصحاب المعرفة قبل أي جمع أو نشر." data-en="This protocol is an initial operational draft. It is not legal advice, institutional ethics approval or completed Nubian community review. It must be adapted with knowledge holders before collection or publication.">هذا البروتوكول مسودة تشغيلية أولية. لا يمثل مراجعة قانونية، ولا اعتمادًا أخلاقيًا مؤسسيًا، ولا مراجعة مجتمعية نوبيّة مكتملة. ينبغي تكييفه بمشاركة أصحاب المعرفة قبل أي جمع أو نشر.</p></footer>
+<script>
+(() => {
+  const langButton = document.getElementById('lang');
+  let isEnglish = false;
+  langButton.addEventListener('click', () => {
+    isEnglish = !isEnglish;
+    document.documentElement.lang = isEnglish ? 'en' : 'ar';
+    document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+      el.innerHTML = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+    langButton.textContent = isEnglish ? 'عربي' : 'EN';
+    langButton.setAttribute('aria-label', isEnglish ? 'تغيير اللغة إلى العربية' : 'Switch language to English');
+  });
+
+  const checks = [...document.querySelectorAll('#consentChecklist input[type="checkbox"]')];
+  const progress = document.getElementById('consentProgress');
+  const bar = document.getElementById('consentBar');
+  const count = document.getElementById('consentCount');
+  function updateChecklist() {
+    const n = checks.filter(input => input.checked).length;
+    count.textContent = n + ' / ' + checks.length;
+    bar.style.width = (checks.length ? n / checks.length * 100 : 0) + '%';
+    progress.setAttribute('aria-valuenow', String(n));
+  }
+  checks.forEach(input => input.addEventListener('change', updateChecklist));
+
+  const template = {
+    record_id: "NUB-YYYY-0001",
+    item_type: "photograph | audio | oral_history | recipe | vocabulary | document",
+    title_original: "UNKNOWN",
+    title_arabic: "UNKNOWN",
+    language: ["UNKNOWN"],
+    local_variant: "UNKNOWN",
+    locality: "UNKNOWN",
+    date_created: "UNKNOWN",
+    date_recorded: "UNKNOWN",
+    date_precision: "UNKNOWN",
+    contributor_credit: "UNKNOWN",
+    custodian: "UNKNOWN",
+    source_url: "UNKNOWN",
+    rights_holder: "UNKNOWN",
+    license: "UNKNOWN",
+    consent_status: "NEEDS_REVIEW",
+    access_level: "RESTRICTED",
+    claim_status: "UNKNOWN",
+    evidence_links: [],
+    review_date: "UNKNOWN",
+    reviewer_notes: "UNKNOWN"
+  };
+  document.getElementById('downloadTemplate').addEventListener('click', () => {
+    const json = JSON.stringify(template, null, 2);
+    const blob = new Blob([json], {type: 'application/json;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'nub-record-metadata-template.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  const progressTop = document.getElementById('readProgress');
+  let scheduled = false;
+  function updateReadingProgress() {
+    const root = document.documentElement;
+    const max = root.scrollHeight - root.clientHeight;
+    const percent = max > 0 ? (root.scrollTop / max) * 100 : 0;
+    progressTop.style.width = Math.min(100, Math.max(0, percent)) + '%';
+    scheduled = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!scheduled) {
+      scheduled = true;
+      window.requestAnimationFrame(updateReadingProgress);
+    }
+  }, {passive:true});
+  updateReadingProgress();
+
+  document.body.classList.add('motion-ready');
+  const revealNodes = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.08});
+    revealNodes.forEach(node => observer.observe(node));
+  } else {
+    revealNodes.forEach(node => node.classList.add('in'));
+  }
+})();
+</script>
+</body>
+</html>
