@@ -55,6 +55,7 @@ def audit(path):
 
 
 class StaticSiteQualityTests(unittest.TestCase):
+    """Zero-cost checks for baseline site quality and case-study disclosures."""
     def test_site_has_html_pages_to_audit(self):
         self.assertTrue(PAGES, "Expected root-level HTML pages to be audited")
 
