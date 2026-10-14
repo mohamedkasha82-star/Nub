@@ -98,6 +98,21 @@ class StaticSiteQualityTests(unittest.TestCase):
         self.assertIn("visibilitychange", source)
         self.assertIn("addEventListener('click',()=>playing?stopSound():startSound())", source)
 
+    def test_memory_notebook_is_local_first_and_exportable(self):
+        page = ROOT / "memory-navigator.html"
+        self.assertTrue(page.is_file(), "Memory Navigator page should exist")
+        source = page.read_text(encoding="utf-8")
+        self.assertIn("localStorage", source, "Notebook should save locally in the browser")
+        self.assertIn("nub-memory-notebook.json", source, "Notebook should provide JSON export")
+        self.assertIn("window.print()", source, "Notebook should support print / save PDF")
+        self.assertIn("These notes are never sent to a server", source)
+        self.assertIn("not verified historical evidence or oral testimony", source)
+        self.assertIn("prefers-reduced-motion:reduce", source)
+
+    def test_memory_notebook_is_linked_from_homepage(self):
+        source = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./memory-navigator.html"', source)
+
     def test_sonic_atlas_is_linked_from_homepage(self):
         source = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="./soundscape.html"', source)
