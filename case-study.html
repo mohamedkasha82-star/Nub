@@ -43,7 +43,7 @@ a{color:inherit;text-decoration:none;text-underline-offset:4px}a:hover{color:var
 </header>
 <main>
 <section class="hero">
-<video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
+<video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
 <div class="wrap hero-inner">
 <div class="hero-copy">
 <div class="eyebrow"><span data-ar="دراسة حالة · بحث وتصميم رقمي" data-en="Case study · Digital research & design">دراسة حالة · بحث وتصميم رقمي</span></div>
@@ -142,6 +142,17 @@ langButton.addEventListener('click',()=>setLanguage(lang==='ar'?'en':'ar'));
 const progress=document.getElementById('progress');
 function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;const value=max>0?scrollY/max:0;progress.style.width=(value*100)+'%';}
 addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress);updateProgress();
+const video=document.querySelector('.hero-video');
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+if(video){
+ if(reducedMotion.matches){video.pause();}
+ else if('IntersectionObserver' in window){
+  const videoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting&&!document.hidden){video.play().catch(()=>{});}else{video.pause();}}),{threshold:.15});
+  videoObserver.observe(video);
+ }
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();});
+ reducedMotion.addEventListener?.('change',event=>{if(event.matches)video.pause();});
+}
 if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 </script>
 </body>
