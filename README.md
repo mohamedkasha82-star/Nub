@@ -38,3 +38,7 @@ GitHub Pages workflow deploys this repository independently. Do not connect or o
 ## Research dossier: Nubian Archives Registry (v1.0)
 The dedicated dossier presents the uploaded author manuscript as a preprint/data paper, dated 14 October 2026, with a registry snapshot verified 12 October 2026. It reports the paper’s sample counts and limitations explicitly; it does not describe the sample as a census, claim independent peer review, or invent a DOI. The manuscript notes that a DOI deposit was planned for the future.
 
+## Record schema and responsible contribution
+- `schemas/nub-record.schema.json` — draft JSON Schema for source provenance, claim scope, rights, consent, access restrictions, sensitivity flags, and review state.
+- `schemas/README.md` — implementation guardrails: preserve UNKNOWN states, separate copyright from consent, restrict unresolved community material, and do not overstate review.
+- The schema is not yet connected to ingestion or Supabase and is not a compliance claim, community approval, or evidence of permission for any item.
