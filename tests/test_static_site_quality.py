@@ -93,7 +93,7 @@ class StaticSiteQualityTests(unittest.TestCase):
         self.assertTrue(page.is_file(), "Sonic Atlas page should exist")
         source = page.read_text(encoding="utf-8")
         self.assertIn("Audio never starts automatically", source)
-        self.assertIn("not an authentic Nubian song", source)
+        self.assertIn("or an authentic Nubian song", source)
         self.assertIn("prefers-reduced-motion:reduce", source)
         self.assertIn("visibilitychange", source)
         self.assertIn("addEventListener('click',()=>playing?stopSound():startSound())", source)
