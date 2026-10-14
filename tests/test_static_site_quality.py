@@ -88,6 +88,21 @@ class StaticSiteQualityTests(unittest.TestCase):
                     self.assertIn("controls", audio_attrs, "Audio needs visible playback controls")
                     self.assertNotIn("autoplay", audio_attrs, "Cultural audio must never autoplay")
 
+    def test_sonic_atlas_is_opt_in_and_culturally_transparent(self):
+        page = ROOT / "soundscape.html"
+        self.assertTrue(page.is_file(), "Sonic Atlas page should exist")
+        source = page.read_text(encoding="utf-8")
+        self.assertIn("Audio never starts automatically", source)
+        self.assertIn("not an authentic Nubian song", source)
+        self.assertIn("prefers-reduced-motion:reduce", source)
+        self.assertIn("visibilitychange", source)
+        self.assertIn("addEventListener('click',()=>playing?stopSound():startSound())", source)
+
+    def test_sonic_atlas_is_linked_from_homepage(self):
+        source = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./soundscape.html"', source)
+        self.assertIn("Sonic Atlas", source)
+
 
 if __name__ == "__main__":
     unittest.main()
