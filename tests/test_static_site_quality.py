@@ -104,5 +104,24 @@ class StaticSiteQualityTests(unittest.TestCase):
         self.assertIn("Sonic Atlas", source)
 
 
+    def test_case_study_is_bilingual_and_academically_transparent(self):
+        page = ROOT / "case-study.html"
+        self.assertTrue(page.is_file(), "NŪB case study should exist")
+        source = page.read_text(encoding="utf-8")
+        self.assertIn('data-ar=', source)
+        self.assertIn('data-en=', source)
+        self.assertIn("peer review", source)
+        self.assertIn("UNKNOWN", source)
+        self.assertIn("prefers-reduced-motion:reduce", source)
+        self.assertIn('href="./research-map.html"', source)
+        self.assertIn('href="./fieldwork.html"', source)
+
+    def test_case_study_is_linked_from_homepage(self):
+        source = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="./case-study.html"', source)
+        case_study = (ROOT / "case-study.html").read_text(encoding="utf-8")
+        self.assertIn("not a replacement for Nubia Odyssey", case_study)
+
+
 if __name__ == "__main__":
     unittest.main()
