@@ -21,29 +21,29 @@ create table if not exists nub_archive.records (
   constraint records_payload_record_id_matches
     check (payload ->> 'record_id' = record_id),
   constraint records_payload_title_present
-    check (pg_catalog.nullif(pg_catalog.btrim(payload ->> 'title'), '') is not null),
+    check (nullif(pg_catalog.btrim(payload ->> 'title'), '') is not null),
   constraint records_payload_kind_present
-    check (pg_catalog.nullif(pg_catalog.btrim(payload ->> 'record_kind'), '') is not null),
+    check (nullif(pg_catalog.btrim(payload ->> 'record_kind'), '') is not null),
   constraint records_payload_provenance_present
     check (
       pg_catalog.jsonb_typeof(payload -> 'provenance') = 'object'
-      and pg_catalog.nullif(payload -> 'provenance' ->> 'origin_type', '') is not null
-      and pg_catalog.nullif(payload -> 'provenance' ->> 'source_status', '') is not null
+      and nullif(payload -> 'provenance' ->> 'origin_type', '') is not null
+      and nullif(payload -> 'provenance' ->> 'source_status', '') is not null
     ),
   constraint records_payload_rights_present
     check (
       pg_catalog.jsonb_typeof(payload -> 'rights') = 'object'
-      and pg_catalog.nullif(payload -> 'rights' ->> 'status', '') is not null
+      and nullif(payload -> 'rights' ->> 'status', '') is not null
     ),
   constraint records_payload_access_present
     check (
       pg_catalog.jsonb_typeof(payload -> 'access') = 'object'
-      and pg_catalog.nullif(payload -> 'access' ->> 'level', '') is not null
+      and nullif(payload -> 'access' ->> 'level', '') is not null
     ),
   constraint records_payload_review_state_present
     check (
       pg_catalog.jsonb_typeof(payload -> 'review_state') = 'object'
-      and pg_catalog.nullif(payload -> 'review_state' ->> 'status', '') is not null
+      and nullif(payload -> 'review_state' ->> 'status', '') is not null
     )
 );
 
