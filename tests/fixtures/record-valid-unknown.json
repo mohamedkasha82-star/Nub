@@ -1,0 +1,19 @@
+{
+  "record_id": "NUB-EXAMPLE-001",
+  "title": "Synthetic validation example — not a historical source",
+  "record_kind": "other",
+  "description": "A deliberately synthetic fixture used only to test the record schema.",
+  "provenance": {
+    "origin_type": "unknown",
+    "source_status": "unknown"
+  },
+  "review_state": {
+    "status": "unreviewed"
+  },
+  "rights": {
+    "status": "unknown"
+  },
+  "access": {
+    "level": "not_decided"
+  }
+}
