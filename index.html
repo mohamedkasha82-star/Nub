@@ -30,6 +30,32 @@
 .river-chapter-link.is-active .chapter-label{color:#68d6c0}
 @media(max-width:760px){.river-chapters{inset-inline-start:50%;top:auto;bottom:max(12px,env(safe-area-inset-bottom));translate:-50% 0;flex-direction:row;gap:10px;padding:8px 12px;opacity:.92}.river-chapter-link{width:22px;height:22px}.chapter-label{inset-inline-start:50%;top:auto;bottom:calc(100% + 8px);translate:-50% 0}.river-chapter-link.is-active .chapter-label{opacity:1}.river-chapter-link:hover .chapter-label{opacity:1}}
 @media(prefers-reduced-motion:reduce){.river-chapters,.chapter-dot,.chapter-label{transition:none}}
+
+/* Immersive chapter portal: cinematic, keyboard-operable, and honest about provenance */
+.journey-launch{border:0;cursor:pointer}
+.journey-dialog{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#041310;color:var(--ivory);overflow:auto;isolation:isolate}
+.journey-dialog[open]{display:block}
+.journey-dialog::backdrop{background:#020b09}
+.journey-visual,.journey-shade{position:absolute;inset:0;pointer-events:none}
+.journey-film{width:100%;height:100%;object-fit:cover;opacity:.56;filter:saturate(.86) contrast(1.08)}
+.journey-shade{background:linear-gradient(90deg,rgba(4,19,16,.96) 0%,rgba(4,19,16,.76) 47%,rgba(4,19,16,.28) 100%),linear-gradient(0deg,rgba(4,19,16,.9),transparent 55%)}
+.journey-content{position:relative;z-index:2;min-height:100%;width:min(1040px,calc(100% - 48px));margin-inline:auto;padding:clamp(100px,13vh,150px) 0 70px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.journey-content h2{font-size:clamp(2.6rem,7vw,6.7rem);font-weight:350;line-height:1.2;letter-spacing:-.065em;max-width:900px;margin:24px 0}
+.journey-content h2 span{display:block;color:var(--gold)}
+.journey-content>p:not(.eyebrow){max-width:620px;color:#d0e0d7;line-height:2.15;font-size:clamp(.88rem,1.4vw,1.05rem)}
+.journey-close{position:absolute;z-index:5;top:max(20px,env(safe-area-inset-top));inset-inline-end:clamp(18px,4vw,48px);border:1px solid #e7f5ed50;border-radius:999px;background:#061714aa;color:var(--ivory);padding:12px 17px;font:inherit;font-size:.75rem;cursor:pointer;backdrop-filter:blur(12px)}
+.journey-close:focus-visible,.journey-doors a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.journey-doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:10px;margin:34px 0 22px}
+.journey-doors a{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:19px 17px;border:1px solid #dceee333;background:#071c18a8;backdrop-filter:blur(12px);transition:border-color .25s,background .25s,transform .25s}
+.journey-doors a:hover{border-color:#68d6c099;background:#0b2c24d9;transform:translateY(-3px)}
+.journey-doors a span{grid-column:1/-1;font:10px var(--en);letter-spacing:.16em;color:var(--aqua)}
+.journey-doors a b{font-size:.78rem;font-weight:500}
+.journey-doors a i{font-style:normal;color:var(--gold);font-size:1.15rem}
+.journey-content>small{color:#a8c0b4;font-size:.68rem;line-height:1.9}
+@media(max-width:760px){.journey-content{width:calc(100% - 34px);padding:100px 0 45px;justify-content:flex-start}.journey-content h2{font-size:clamp(2.45rem,12vw,4.4rem);margin:20px 0}.journey-film{object-position:62% center;opacity:.42}.journey-shade{background:linear-gradient(180deg,rgba(4,19,16,.35),rgba(4,19,16,.82) 35%,rgba(4,19,16,.98) 100%)}.journey-doors{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:24px 0 18px}.journey-doors a{padding:15px 13px;gap:13px}.journey-doors a b{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.journey-film{display:none}.journey-doors a{transition:none}.journey-doors a:hover{transform:none}}
+@media(forced-colors:active){.journey-film{display:none}.journey-dialog,.journey-doors a{border:1px solid CanvasText}}
+
 /* NŪB cinematic river film — compressed visual layer behind the accessible hero copy */
 .hero{isolation:isolate}
 .hero .hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:0;opacity:.28;filter:saturate(.82) contrast(1.08);pointer-events:none;mask-image:linear-gradient(90deg,rgba(0,0,0,.12),#000 38%,#000 78%,rgba(0,0,0,.18));-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.12),#000 38%,#000 78%,rgba(0,0,0,.18))}
@@ -77,7 +103,7 @@
 <div class="kicker"><b></b><span data-ar="أطلس حيّ للنوبة · مشروع مستقل متصل" data-en="A living atlas of Nubia · An independent companion">أطلس حيّ للنوبة · مشروع مستقل متصل</span></div>
 <h1 data-ar="النوبة، أبعد <span>من حدود الزمن.</span>" data-en="Nubia, beyond <span>the borders of time.</span>">النوبة، أبعد <span>من حدود الزمن.</span></h1>
 <p class="hero-desc" data-ar="NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة." data-en="NŪB extends the Nubia Odyssey journey into an explorable layer of knowledge: histories with many centres, a river that connects without flattening, languages, architecture and human memory — with sources visible rather than hidden behind beautiful images.">NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة.</p>
-<div class="hero-cta"><a class="button" href="./atlas.html"><span data-ar="ادخل الأطلس المعرفي" data-en="Enter the living atlas">ادخل الأطلس المعرفي</span><span aria-hidden="true">↙</span></a><a class="button ghost" href="./culture.html"><span data-ar="ذاكرة النوبة الحيّة" data-en="Living Nubian Heritage">ذاكرة النوبة الحيّة</span> ↗</a><a class="button ghost" href="https://nubia-odyssey-clean.vercel.app/#lineage" target="_blank" rel="noopener noreferrer" data-ar="ارجع إلى خط النسب في Odyssey ↗" data-en="Return to Odyssey lineage ↗">ارجع إلى خط النسب في Odyssey ↗</a></div>
+<div class="hero-cta"><button class="button journey-launch" id="journey-open" type="button" aria-haspopup="dialog"><span data-ar="ابدأ الرحلة السينمائية" data-en="Begin the cinematic journey">ابدأ الرحلة السينمائية</span><span aria-hidden="true">↗</span></button><a class="button" href="./atlas.html"><span data-ar="ادخل الأطلس المعرفي" data-en="Enter the living atlas">ادخل الأطلس المعرفي</span><span aria-hidden="true">↙</span></a><a class="button ghost" href="./culture.html"><span data-ar="ذاكرة النوبة الحيّة" data-en="Living Nubian Heritage">ذاكرة النوبة الحيّة</span> ↗</a><a class="button ghost" href="https://nubia-odyssey-clean.vercel.app/#lineage" target="_blank" rel="noopener noreferrer" data-ar="ارجع إلى خط النسب في Odyssey ↗" data-en="Return to Odyssey lineage ↗">ارجع إلى خط النسب في Odyssey ↗</a></div>
 </div>
 <details class="voice-note"><summary data-ar="▶ اسمع مقدمة النيل الحي" data-en="▶ Listen to the Living Nile intro">▶ اسمع مقدمة النيل الحي</summary><audio controls preload="none" src="https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d4857d0c-655b-44e1-8cd6-6732cea609dd.mp3" aria-label="مقدمة صوتية تجريبية عن النيل الحي"></audio><small data-ar="صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا." data-en="AI-generated concept narration for design testing; not an authentic Nubian testimony or recording.">صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا.</small></details>
 <div class="orbit-stage" aria-label="رسم تجريدي متحرك مستلهم من النهر والطبقات الزمنية">
@@ -90,6 +116,29 @@
 </div>
 </div><div class="scroll-label">SCROLL TO UNFOLD</div>
 </section>
+
+<dialog class="journey-dialog" id="journey-dialog" aria-labelledby="journey-title">
+  <div class="journey-visual" aria-hidden="true">
+    <video class="journey-film" id="journey-film" muted playsinline preload="none">
+      <source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="journey-shade" aria-hidden="true"></div>
+  <button class="journey-close" id="journey-close" type="button" aria-label="إغلاق الرحلة" data-ar="إغلاق ✕" data-en="Close ✕">إغلاق ✕</button>
+  <div class="journey-content">
+    <p class="eyebrow" data-ar="NŪB · النيل الحي" data-en="NŪB · THE LIVING NILE">NŪB · النيل الحي</p>
+    <h2 id="journey-title" data-ar="النهر ليس خلفية. <span>إنه بداية الحكاية.</span>" data-en="The river is not a backdrop. <span>It is where the story begins.</span>">النهر ليس خلفية. <span>إنه بداية الحكاية.</span></h2>
+    <p data-ar="اعبر من المشهد إلى المعرفة: المكان، والذاكرة، واللغة، ثم المصادر التي تساعدنا على التمييز بين ما نعرفه وما يحتاج إلى بحث." data-en="Move from image to knowledge: place, memory, language, and the sources that help us distinguish what is known from what still needs research.">اعبر من المشهد إلى المعرفة: المكان، والذاكرة، واللغة، ثم المصادر التي تساعدنا على التمييز بين ما نعرفه وما يحتاج إلى بحث.</p>
+    <nav class="journey-doors" aria-label="أبواب الرحلة" data-ar-label="أبواب الرحلة" data-en-label="Journey chapters">
+      <a href="#approach"><span>01</span><b data-ar="زاوية الرؤية" data-en="The lens">زاوية الرؤية</b><i aria-hidden="true">↙</i></a>
+      <a href="#chapters"><span>02</span><b data-ar="فصول الأطلس" data-en="Atlas chapters">فصول الأطلس</b><i aria-hidden="true">↙</i></a>
+      <a href="#timeline"><span>03</span><b data-ar="الخط الزمني" data-en="Timeline">الخط الزمني</b><i aria-hidden="true">↙</i></a>
+      <a href="#standards"><span>04</span><b data-ar="المعايير والمصادر" data-en="Standards & sources">المعايير والمصادر</b><i aria-hidden="true">↙</i></a>
+    </nav>
+    <small data-ar="تجربة بصرية تمهيدية؛ ليست مادة أرشيفية أو بديلًا عن التوثيق والمراجعة المجتمعية." data-en="An introductory visual experience; not archival footage or a substitute for documentation and community review.">تجربة بصرية تمهيدية؛ ليست مادة أرشيفية أو بديلًا عن التوثيق والمراجعة المجتمعية.</small>
+  </div>
+</dialog>
+
 <section class="section paper" id="approach"><div class="wrap">
 <div class="section-head reveal"><div><div class="eyebrow" data-ar="01 — زاوية الرؤية" data-en="01 — THE LENS">01 — زاوية الرؤية</div><h2 data-ar="من شجرة النسب إلى <span>غابة العلاقات.</span>" data-en="From a lineage tree to <span>a forest of connections.</span>">من شجرة النسب إلى <span>غابة العلاقات.</span></h2></div><p data-ar="تمنحنا Odyssey نقطة دخول قوية إلى النسب والسرد. يضيف NŪB طبقة أخرى: ماذا حدث حول هذه الروابط؟ وأين نجد الدليل؟ وأي أصوات ما زالت غائبة؟" data-en="Odyssey offers a powerful entry point into lineage and narrative. NŪB adds another layer: what surrounded these connections, where is the evidence, and whose voices are still missing?">تمنحنا Odyssey نقطة دخول قوية إلى النسب والسرد. يضيف NŪB طبقة أخرى: ماذا حدث حول هذه الروابط؟ وأين نجد الدليل؟ وأي أصوات ما زالت غائبة؟</p></div>
 <div class="duo"><div class="statement reveal" data-ar="النهر لا يروي قصة واحدة. <em>والأثر لا يستطيع وحده أن يتكلم عن الحياة.</em>" data-en="A river tells more than one story. <em>And a monument alone cannot speak for a living culture.</em>">النهر لا يروي قصة واحدة. <em>والأثر لا يستطيع وحده أن يتكلم عن الحياة.</em></div><div class="side-note reveal"><strong data-ar="امتداد، لا بديل" data-en="An extension, not a replacement">امتداد، لا بديل</strong><span data-ar="NŪB مشروع مستقل في مستودع منفصل. يحتفظ بـNubia Odyssey بوصفها تجربة سردية قائمة، ثم يربطها بطبقة تفسيرية موثّقة. لا نعيد كتابة الأصل ولا نمحو الفروق بين النوبة المصرية والنوبة السودانية أو بين الأزمنة والمجتمعات." data-en="NŪB is an independent project in a separate repository. It preserves Nubia Odyssey as an existing narrative experience, then connects it to a sourced interpretive layer. It does not rewrite the original or erase differences between Egyptian and Sudanese Nubia, periods, and communities.">NŪB مشروع مستقل في مستودع منفصل. يحتفظ بـNubia Odyssey بوصفها تجربة سردية قائمة، ثم يربطها بطبقة تفسيرية موثّقة. لا نعيد كتابة الأصل ولا نمحو الفروق بين النوبة المصرية والنوبة السودانية أو بين الأزمنة والمجتمعات.</span></div></div>
@@ -185,6 +234,29 @@ if(canvas&&hero){
  document.addEventListener('visibilitychange',()=>{visible=document.visibilityState==='visible';start()});
  if(reduced.addEventListener)reduced.addEventListener('change',start);resize();start();
 }
+
+/* Cinematic journey dialog: native dialog provides Escape handling and focus restoration. */
+const journeyDialog=document.getElementById('journey-dialog');
+const journeyOpen=document.getElementById('journey-open');
+const journeyClose=document.getElementById('journey-close');
+const journeyFilm=document.getElementById('journey-film');
+if(journeyDialog&&journeyOpen&&journeyClose){
+ journeyOpen.addEventListener('click',()=>{
+  journeyDialog.showModal();
+  if(journeyFilm&&!matchMedia('(prefers-reduced-motion: reduce)').matches){journeyFilm.currentTime=0;const playback=journeyFilm.play();if(playback&&playback.catch)playback.catch(()=>{});}
+  journeyClose.focus();
+ });
+ const closeJourney=()=>{if(journeyDialog.open)journeyDialog.close();if(journeyFilm)journeyFilm.pause()};
+ journeyClose.addEventListener('click',closeJourney);
+ journeyDialog.addEventListener('click',event=>{if(event.target===journeyDialog)closeJourney()});
+ journeyDialog.querySelectorAll('.journey-doors a').forEach(link=>link.addEventListener('click',closeJourney));
+ journeyDialog.addEventListener('close',()=>{if(journeyFilm)journeyFilm.pause()});
+ const navLabel=journeyDialog.querySelector('.journey-doors');
+ const updateJourneyLanguage=()=>{if(navLabel)navLabel.setAttribute('aria-label',document.documentElement.lang==='en'?'Journey chapters':'أبواب الرحلة')};
+ const originalSetLanguage=setLanguage;
+ setLanguage=function(next){originalSetLanguage(next);updateJourneyLanguage()};
+}
+
 })();
 </script>
 </body></html>
