@@ -1,0 +1,485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mohamedkasha82-star.github.io/Nub/schemas/nub-record.schema.json",
+  "title": "NŪB Evidence and Heritage Record",
+  "description": "Draft validation contract for documenting sources and community-contributed heritage materials. It does not itself establish rights, consent, authenticity, or scholarly verification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "title",
+    "record_kind",
+    "provenance",
+    "review_state",
+    "rights",
+    "access"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{1,119}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "title_translation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500
+    },
+    "record_kind": {
+      "enum": [
+        "archival_item",
+        "published_research",
+        "institutional_record",
+        "photograph",
+        "audio",
+        "video",
+        "song",
+        "oral_history",
+        "language_material",
+        "foodway",
+        "object",
+        "map",
+        "community_documentation",
+        "other"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 5000
+    },
+    "creator_or_custodian": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 500
+    },
+    "community_attribution": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "language": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_type",
+        "source_status"
+      ],
+      "properties": {
+        "origin_type": {
+          "enum": [
+            "official_repository",
+            "academic_publication",
+            "community_contribution",
+            "personal_collection",
+            "field_recording",
+            "published_media",
+            "other",
+            "unknown"
+          ]
+        },
+        "source_title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "repository_or_collection": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "catalogue_identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250
+        },
+        "creator_or_recording_agent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "date_created": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_collected": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_accessed": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "source_status": {
+          "enum": [
+            "primary_record_checked",
+            "repository_landing_page_checked",
+            "citation_only",
+            "community_supplied",
+            "not_yet_checked",
+            "unknown"
+          ]
+        },
+        "transcription_or_translation_method": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        },
+        "provenance_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3000
+        }
+      }
+    },
+    "claim_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1500
+          }
+        },
+        "does_not_establish": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1500
+          }
+        },
+        "interpretation_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3000
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "unknown",
+            "in_copyright",
+            "public_domain",
+            "open_license",
+            "permission_required",
+            "restricted",
+            "mixed",
+            "not_applicable"
+          ]
+        },
+        "license_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250
+        },
+        "license_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "rights_holder_or_contact": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "permission_evidence": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        },
+        "commercial_reuse_allowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "derivatives_allowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "attribution_required": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "rights_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3000
+        }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "unknown",
+            "not_applicable",
+            "not_requested",
+            "requested",
+            "obtained",
+            "declined",
+            "withdrawn",
+            "restricted_by_contributor"
+          ]
+        },
+        "recorded_evidence": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        },
+        "public_display": {
+          "enum": [
+            "unknown",
+            "approved",
+            "not_approved",
+            "not_applicable"
+          ]
+        },
+        "translation": {
+          "enum": [
+            "unknown",
+            "approved",
+            "not_approved",
+            "not_applicable"
+          ]
+        },
+        "edited_excerpt": {
+          "enum": [
+            "unknown",
+            "approved",
+            "not_approved",
+            "not_applicable"
+          ]
+        },
+        "sensitive_knowledge": {
+          "enum": [
+            "unknown",
+            "none_identified",
+            "review_required",
+            "restricted",
+            "not_applicable"
+          ]
+        },
+        "withdrawal_or_contact_route": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "consent_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3000
+        }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "public",
+            "community_only",
+            "restricted",
+            "embargoed",
+            "not_decided"
+          ]
+        },
+        "embargo_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "access_decision_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "access_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        }
+      }
+    },
+    "review_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "pending_editorial_check",
+            "editorially_checked",
+            "community_reviewed",
+            "needs_correction",
+            "withdrawn_from_public_display"
+          ]
+        },
+        "checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "reviewer_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 250
+        },
+        "review_scope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        },
+        "review_notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3000
+        }
+      }
+    },
+    "sensitivity_flags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "living_person",
+          "sacred_or_restricted_knowledge",
+          "precise_location",
+          "family_or_personal_history",
+          "minor",
+          "language_oral_recording",
+          "copyright_unclear",
+          "consent_unclear",
+          "other"
+        ]
+      }
+    },
+    "related_record_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 120
+      }
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  }
+}
