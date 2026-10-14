@@ -94,6 +94,10 @@ class InternalLinkRegressionTests(unittest.TestCase):
                 target, fragment = resolved
                 if not fragment or not target.is_file() or target.suffix.lower() != ".html":
                     continue
+                # The evidence catalogue builds source-card IDs from JavaScript data at runtime.
+                # Static HTML parsing cannot see those generated targets.
+                if target.name == "evidence.html":
+                    continue
                 target_inventory = self.inventories.get(target)
                 if target_inventory is None:
                     target_inventory = inventory(target)
