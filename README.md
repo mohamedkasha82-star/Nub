@@ -7,6 +7,7 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 - `atlas.html` — expanded knowledge layer: historical chronology, Nile geography, displacement, languages and oral tradition, architecture, contemporary continuity, open questions, and inline source links.
 - `sources.html` — source register, source types, methodological boundaries, and editorial principles.
 - `culture.html` — bilingual Living Heritage experience covering Nubia before/after displacement, architecture, language, music, food, community memory, source-linked archival collections and consent-aware contribution suggestions.
+- `listening.html` — bilingual Listening Room with locally generated abstract synthetic sound (no autoplay), explicit distinction between sound design, archival recordings and consented oral history, plus a concise provenance and rights pathway.
 - `fieldwork.html` — bilingual proposed fieldwork protocol for community-led documentation, granular consent, access levels, provenance metadata, interview prompts, and a downloadable JSON record template.
 - `evidence.html` — searchable evidence register separating supported claims from limits, with institutional standards and scholarly research references.
 - `research.html` — interactive research dossier for Mohamed Kasha’s *Nubian Archives Registry (v1.0)*, including dated findings, methodology, limitations, citation metadata, and next-work plan.
