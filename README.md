@@ -4,6 +4,7 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 
 ## Pages
 - `index.html` — cinematic entry point, project relationship, research paths, summary timeline and methodology.
+- `case-study.html` — bilingual editorial case study documenting NŪB’s design intent, core modules, technology, academic boundaries, and next steps.
 - `atlas.html` — expanded knowledge layer: historical chronology, Nile geography, displacement, languages and oral tradition, architecture, contemporary continuity, open questions, and inline source links.
 - `sources.html` — source register, source types, methodological boundaries, and editorial principles.
 - `culture.html` — bilingual Living Heritage experience covering Nubia before/after displacement, architecture, language, music, food, community memory, source-linked archival collections and consent-aware contribution suggestions.
