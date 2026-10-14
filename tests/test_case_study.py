@@ -14,7 +14,7 @@ class CaseStudyTests(unittest.TestCase):
 
     def test_case_study_is_bilingual_and_responsive(self):
         self.assertIn('<html lang="ar" dir="rtl">', self.page)
-        self.assertIn('data-lang="en"', self.page)
+        self.assertIn('data-en=', self.page)
         self.assertIn('name="viewport"', self.page)
         self.assertIn("@media(max-width:560px)", self.page)
 
