@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061714">
+<meta name="description" content="NŪB Sonic Atlas — مشهد صوتي تفاعلي تجريبي مستوحى من الماء والهواء والضوء، مع توضيح صريح أنه ليس تسجيلًا نوبيًا ميدانيًا.">
+<meta property="og:title" content="NŪB — أطلس الصوت الحي | Sonic Atlas">
+<meta property="og:description" content="أصغِ إلى مشهد تفاعلي مولّد داخل المتصفح، واستكشف النهر بصريًا وصوتيًا.">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>NŪB — أطلس الصوت الحي | Sonic Atlas</title>
+<style>
+:root{color-scheme:dark;--bg:#061714;--deep:#09251f;--panel:#0c2d25;--ink:#f4f0e6;--muted:#b6c8bd;--aqua:#68d6c0;--gold:#e6c27b;--clay:#dd7957;--line:#dceee326;--ar:'Alexandria',sans-serif;--en:'Manrope',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.9 var(--ar);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none;text-underline-offset:4px}
+button,input{font:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.wrap{width:min(1200px,calc(100% - 44px));margin-inline:auto}
+.en{font-family:var(--en);letter-spacing:.13em}
+.top{position:absolute;z-index:12;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font:700 .94rem var(--en);letter-spacing:.22em}
+.mark{display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--aqua);border-radius:50%;color:var(--aqua);font:1rem var(--ar);box-shadow:0 0 26px #68d6c020}
+.nav{display:flex;gap:22px;align-items:center;font-size:.72rem;color:#d0ded6}
+.nav a:hover{color:var(--gold)}
+.pill{border:1px solid var(--line);border-radius:999px;padding:8px 13px;background:#06171470;color:var(--ink);font-size:.7rem;cursor:pointer;white-space:nowrap}
+.hero{position:relative;isolation:isolate;min-height:100svh;display:grid;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 58%,#14534277,transparent 42%),linear-gradient(180deg,#061714 0%,#0a2720 56%,#061714 100%)}
+.hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-2;opacity:.2;filter:saturate(.8) contrast(1.08);pointer-events:none}
+@media(max-width:760px){.hero-film{opacity:.15;object-position:58% center}}
+@media(prefers-reduced-motion:reduce){.hero-film{display:none}}
+@media(forced-colors:active){.hero-film{display:none}}
+#sonic-sky{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#061714cc,transparent 45%,#06171466),linear-gradient(0deg,#061714 0%,transparent 33%,#06171455)}
+.hero:after{content:"NŪB";position:absolute;z-index:-1;left:-.04em;bottom:-.36em;font:700 clamp(10rem,31vw,29rem)/.9 var(--en);letter-spacing:-.1em;color:#eff9ef05;pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:145px 0 76px;display:grid;grid-template-columns:1fr .9fr;gap:35px;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--aqua);font:600 .65rem var(--en);letter-spacing:.18em;text-transform:uppercase}
+.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+h1{font-size:clamp(3rem,7.6vw,7rem);line-height:1.12;letter-spacing:-.065em;font-weight:400;margin:22px 0;max-width:760px}
+h1 span{display:block;color:var(--gold)}
+.lede{max-width:620px;color:var(--muted);font-size:.91rem;line-height:2.2}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid #68d6c055;border-radius:999px;padding:11px 17px;background:#06171465;color:var(--ink);font-size:.76rem;cursor:pointer;transition:transform .25s,border-color .25s,background .25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--aqua)}
+.btn.primary{background:var(--aqua);border-color:var(--aqua);color:#061714;font-weight:700}
+.visual{position:relative;min-height:530px;display:grid;place-items:center}
+.globe{position:relative;width:min(43vw,480px);aspect-ratio:1;border-radius:50%;border:1px solid #68d6c033;box-shadow:inset 0 0 100px #68d6c010,0 0 100px #68d6c010;animation:glow 9s ease-in-out infinite}
+.globe:before,.globe:after{content:"";position:absolute;inset:9%;border:1px solid #e6c27b55;border-radius:50%;transform:rotateX(68deg) rotate(-27deg)}
+.globe:after{inset:19%;border-color:#68d6c077;transform:rotateX(70deg) rotate(34deg)}
+.river-art{position:absolute;inset:4%;width:92%;height:92%;overflow:visible;filter:drop-shadow(0 0 18px #68d6c01a)}
+.river-line{fill:none;stroke:url(#waterline);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:3 11;animation:flow 18s linear infinite}
+.river-line:nth-of-type(2n){animation-duration:27s;opacity:.5}
+.river-pulse{fill:var(--gold);filter:drop-shadow(0 0 8px #e6c27b)}
+.sun{position:absolute;top:12%;inset-inline-start:29%;width:90px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff2c9 0%,#e6c27b55 32%,transparent 72%);filter:blur(.2px);animation:rise 8s ease-in-out infinite alternate}
+.visual-label{position:absolute;bottom:12px;inset-inline-start:2%;font:9px var(--en);letter-spacing:.19em;color:#b6c8bd88}
+.visual-index{position:absolute;inset-inline-end:0;top:32%;writing-mode:vertical-rl;font:9px var(--en);letter-spacing:.2em;color:#b6c8bd88}
+.sound-console{position:relative;z-index:3;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-top:30px;padding:18px 20px;border:1px solid #68d6c035;border-radius:18px;background:linear-gradient(120deg,#0a2b23dd,#061714bb);backdrop-filter:blur(16px);box-shadow:0 22px 70px #0002}
+.console-top{display:flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600}
+.status-dot{width:7px;height:7px;border-radius:50%;background:#8fa79a;box-shadow:0 0 0 5px #8fa79a16}
+.sound-console.is-playing .status-dot{background:var(--aqua);box-shadow:0 0 0 5px #68d6c01b,0 0 18px #68d6c0;animation:status 2s ease-in-out infinite}
+.console-sub{color:#91a99d;font-size:.64rem;margin-top:5px;line-height:1.7}
+.sound-controls{display:flex;align-items:center;gap:9px}
+.sound-toggle{width:45px;height:45px;display:grid;place-items:center;border:1px solid #68d6c077;border-radius:50%;background:#68d6c012;color:var(--aqua);font-size:1rem;cursor:pointer}
+.sound-toggle:hover{background:#68d6c025}
+.volume{width:95px;accent-color:var(--aqua)}
+.bars{height:28px;display:flex;align-items:center;gap:3px;direction:ltr}
+.bars i{display:block;width:3px;height:5px;border-radius:3px;background:var(--aqua);opacity:.6;transform-origin:center;transition:height .2s}
+.is-playing .bars i{animation:bar .8s ease-in-out infinite alternate}
+.is-playing .bars i:nth-child(2n){animation-delay:-.35s}.is-playing .bars i:nth-child(3n){animation-delay:-.55s}.is-playing .bars i:nth-child(4n){animation-delay:-.15s}
+.disclosure{margin-top:10px;color:#819b8d;font-size:.62rem;line-height:1.8}
+.section{padding:92px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.section h2{font-weight:400;font-size:clamp(2rem,4.8vw,4rem);line-height:1.2;margin:10px 0}
+.section-head p{max-width:500px;color:var(--muted);font-size:.82rem}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tile{position:relative;overflow:hidden;min-height:235px;padding:24px;border:1px solid var(--line);background:linear-gradient(150deg,#0d3027,#071a16);transition:transform .35s,border-color .35s}
+.tile:hover{transform:translateY(-5px);border-color:#68d6c055}
+.tile:before{content:"";position:absolute;width:210px;height:210px;border:1px solid #68d6c020;border-radius:50%;inset-inline-end:-90px;top:-85px;box-shadow:0 0 0 25px #68d6c008,0 0 0 52px #68d6c005}
+.tile .num{font:10px var(--en);letter-spacing:.2em;color:var(--gold)}
+.tile h3{font-size:1.22rem;font-weight:500;margin:32px 0 10px}
+.tile p{color:var(--muted);font-size:.79rem;max-width:390px}
+.tile a{display:inline-block;margin-top:10px;color:var(--aqua);font-size:.76rem}
+.footer{padding:26px 0 38px;border-top:1px solid var(--line);color:#8fa79a;font-size:.7rem}
+.footer-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@keyframes flow{to{stroke-dashoffset:-420}}@keyframes glow{0%,100%{transform:scale(.97);opacity:.75}50%{transform:scale(1.02);opacity:1}}@keyframes rise{to{transform:translate(-10px,17px) scale(1.13);opacity:.7}}@keyframes status{50%{opacity:.45}}@keyframes bar{from{height:4px;opacity:.45}to{height:25px;opacity:1}}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr;gap:0;padding-top:130px}.hero-copy{position:relative;z-index:3}.visual{min-height:340px;margin-top:-20px}.globe{width:min(76vw,390px)}.sun{width:65px}.sound-console{grid-template-columns:1fr;gap:12px}.sound-controls{justify-content:space-between}.volume{width:130px}.section{padding:65px 0}.section-head{display:block}.tiles{grid-template-columns:1fr}.tile{min-height:190px}.nav{gap:12px}.nav a{font-size:.65rem}}
+@media(max-width:520px){.wrap{width:calc(100% - 30px)}.top{min-height:68px}.nav a:nth-child(2){display:none}.brand{font-size:.78rem}.hero-inner{padding-top:110px;padding-bottom:48px}h1{font-size:clamp(2.7rem,13vw,4.5rem)}.lede{font-size:.82rem}.visual{min-height:290px}.sound-console{padding:15px}.console-sub{font-size:.61rem}.section-head p{font-size:.78rem}.tile{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.hero{min-height:auto}#sonic-sky{display:none}.globe{transform:none}.is-playing .bars i{animation:none!important}}
+@media(forced-colors:active){.hero:before,.hero:after,.globe:before,.globe:after{display:none}.sound-console,.tile,.btn{border:1px solid CanvasText}}
+</style>
+</head>
+<body>
+<header class="top wrap">
+<a class="brand" href="./index.html" aria-label="NŪB — الصفحة الرئيسية"><span class="mark">ن</span><span>NŪB <span style="font-weight:400;color:var(--muted)">/ SONIC ATLAS</span></span></a>
+<nav class="nav" aria-label="التنقل الرئيسي"><a href="./index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="./listening.html" data-ar="غرفة الإصغاء" data-en="Listening room">غرفة الإصغاء</a><a href="./atlas.html" data-ar="الأطلس" data-en="Atlas">الأطلس</a></nav>
+<button class="pill" id="language" type="button" aria-label="Switch language">EN</button>
+</header>
+<main>
+<section class="hero" id="top">
+<video class="hero-film" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
+<canvas id="sonic-sky" aria-hidden="true"></canvas>
+<div class="wrap hero-inner">
+<div class="hero-copy">
+<div class="eyebrow"><span data-ar="مختبر تجريبي للصوت والمكان" data-en="An experimental lab for sound and place">مختبر تجريبي للصوت والمكان</span></div>
+<h1 data-ar="حين يصبح <span>النهرُ مسموعًا.</span>" data-en="When the river <span>becomes audible.</span>">حين يصبح <span>النهرُ مسموعًا.</span></h1>
+<p class="lede" data-ar="مساحة غامرة تجمع حركة الضوء مع مشهد صوتي تفاعلي يُولَّد داخل جهازك. اضبط شدّة الموجة، اصغِ إلى طبقات الهواء والماء المتخيّلة، ثم واصل رحلتك داخل الأطلس الحي." data-en="An immersive space pairing moving light with an interactive soundscape generated on your device. Shape the current, listen to imagined layers of air and water, then continue into the living atlas.">مساحة غامرة تجمع حركة الضوء مع مشهد صوتي تفاعلي يُولَّد داخل جهازك. اضبط شدّة الموجة، اصغِ إلى طبقات الهواء والماء المتخيّلة، ثم واصل رحلتك داخل الأطلس الحي.</p>
+<div class="ctas"><button class="btn primary" id="start-top" type="button"><span data-ar="ابدأ الإصغاء" data-en="Begin listening">ابدأ الإصغاء</span> <span aria-hidden="true">↗</span></button><a class="btn" href="./listening.html" data-ar="استكشف غرفة الإصغاء" data-en="Explore the listening room">استكشف غرفة الإصغاء</a></div>
+<div class="sound-console" id="sound-console" aria-label="لوحة التحكم بالمشهد الصوتي">
+<div><div class="console-top"><span class="status-dot" aria-hidden="true"></span><span id="sound-status" data-ar="المشهد متوقف — ابدأ حين تكون مستعدًا" data-en="Soundscape paused — begin when ready">المشهد متوقف — ابدأ حين تكون مستعدًا</span></div><div class="console-sub" data-ar="ماء متخيّل · هواء منخفض · نغمة ضوئية هادئة" data-en="Imagined water · soft air · a quiet luminous tone">ماء متخيّل · هواء منخفض · نغمة ضوئية هادئة</div></div>
+<div class="sound-controls"><div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><button class="sound-toggle" id="sound-toggle" type="button" aria-label="تشغيل المشهد الصوتي" aria-pressed="false">▶</button><label class="volume-label" for="volume" data-ar="الصوت" data-en="Volume">الصوت</label><input class="volume" id="volume" type="range" min="0" max="0.8" value="0.35" step="0.01" aria-label="مستوى الصوت"></div>
+</div>
+<p class="disclosure" data-ar="تنبيه ثقافي: هذا تصميم صوتي توليدي تجريبي، وليس تسجيلًا ميدانيًا للنيل أو أغنية أو موسيقى نوبية أصلية. لا يبدأ الصوت تلقائيًا، ويمكن إيقافه أو خفضه في أي وقت." data-en="Cultural note: this is an experimental synthesized sound design, not a field recording of the Nile or an authentic Nubian song or musical tradition. Audio never starts automatically and can be stopped or lowered at any time.">تنبيه ثقافي: هذا تصميم صوتي توليدي تجريبي، وليس تسجيلًا ميدانيًا للنيل أو أغنية أو موسيقى نوبية أصلية. لا يبدأ الصوت تلقائيًا، ويمكن إيقافه أو خفضه في أي وقت.</p>
+</div>
+<div class="visual" aria-label="مشهد بصري تجريدي متحرك للنهر والضوء">
+<div class="globe"><div class="sun"></div><svg class="river-art" viewBox="0 0 520 520" aria-hidden="true"><defs><linearGradient id="waterline" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e6c27b"/><stop offset=".5" stop-color="#68d6c0"/><stop offset="1" stop-color="#dd7957"/></linearGradient><radialGradient id="watercore"><stop stop-color="#68d6c0" stop-opacity=".2"/><stop offset="1" stop-color="#68d6c0" stop-opacity="0"/></radialGradient></defs><circle cx="260" cy="260" r="160" fill="url(#watercore)"/><path class="river-line" d="M20 25C260 105 130 200 260 255S440 385 180 500"/><path class="river-line" d="M95 0C360 100 160 195 310 260S480 410 255 520"/><path class="river-line" d="M170 0C420 110 205 205 360 275S500 420 340 520"/><path class="river-line" d="M0 150C180 125 125 240 245 300S390 420 95 490"/><circle class="river-pulse" cx="260" cy="255" r="4"/><circle class="river-pulse" cx="310" cy="260" r="3"/></svg></div>
+<div class="visual-label">PLACE / MEMORY / CONTINUITY — NŪB</div><div class="visual-index">SOUND IS NOT AN ARCHIVE</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow" data-ar="ثلاث طبقات · مساحة واحدة" data-en="Three layers · One space">ثلاث طبقات · مساحة واحدة</div><h2 data-ar="اسمع التفاصيل،<br>ولا تخلطها بالتاريخ." data-en="Hear the textures,<br>not a fabricated history.">اسمع التفاصيل،<br>ولا تخلطها بالتاريخ.</h2></div><p data-ar="التجربة البصرية هنا تجريدية، والصوت مولّد برمجيًا. أما الأغاني والشهادات والتسجيلات النوبية الحقيقية فتحتاج إلى أصحابها، وسياقها، وموافقة واضحة وحقوق استخدام موثقة." data-en="The visual language is abstract and the sound is synthesized in code. Authentic Nubian songs, testimony and field recordings require their contributors, context, explicit consent and documented usage rights.">التجربة البصرية هنا تجريدية، والصوت مولّد برمجيًا. أما الأغاني والشهادات والتسجيلات النوبية الحقيقية فتحتاج إلى أصحابها، وسياقها، وموافقة واضحة وحقوق استخدام موثقة.</p></div>
+<div class="tiles">
+<article class="tile"><div class="num">01 / CURRENT</div><h3 data-ar="الماء المتخيّل" data-en="Imagined water">الماء المتخيّل</h3><p data-ar="ضجيج ناعم منخفض التردد يتحرّك ببطء؛ طبقة تصميمية توحي بالحركة دون ادّعاء أنها تسجيل للنيل." data-en="Soft, low-filtered noise slowly shifts in tone: a design layer suggesting movement without pretending to be a Nile recording.">ضجيج ناعم منخفض التردد يتحرّك ببطء؛ طبقة تصميمية توحي بالحركة دون ادّعاء أنها تسجيل للنيل.</p></article>
+<article class="tile"><div class="num">02 / AIR</div><h3 data-ar="هواء بين الضفاف" data-en="Air between banks">هواء بين الضفاف</h3><p data-ar="طبقة رقيقة متغيرة تضيف عمقًا للمشهد، ويمكن خفض الصوت أو إيقافه بالكامل." data-en="A gentle changing layer adds depth to the scene, with full volume control and an immediate stop.">طبقة رقيقة متغيرة تضيف عمقًا للمشهد، ويمكن خفض الصوت أو إيقافه بالكامل.</p></article>
+<article class="tile"><div class="num">03 / LIGHT</div><h3 data-ar="ضوء له إيقاع" data-en="Light with a pulse">ضوء له إيقاع</h3><p data-ar="خطوط نهرية متحركة ونجوم بطيئة تستجيب لحالة المشهد، مع احترام إعداد تقليل الحركة في جهازك." data-en="Flowing river lines and slow particles create a visual rhythm while respecting your reduced-motion preference.">خطوط نهرية متحركة ونجوم بطيئة تستجيب لحالة المشهد، مع احترام إعداد تقليل الحركة في جهازك.</p></article>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-in"><span>NŪB — LIVING HERITAGE, WITH CONTEXT.</span><span data-ar="تجربة تصميمية مجانية · لا تتطلب حسابًا أو تنزيلًا" data-en="Free experimental design · no account or download required">تجربة تصميمية مجانية · لا تتطلب حسابًا أو تنزيلًا</span><a href="./index.html" data-ar="العودة إلى الأطلس الرئيسي ↗" data-en="Return to the main atlas ↗">العودة إلى الأطلس الرئيسي ↗</a></div></footer>
+<script>
+(()=>{
+const langButton=document.getElementById('language');let lang='ar';
+function setLanguage(next){lang=next;document.documentElement.lang=next;document.documentElement.dir=next==='ar'?'rtl':'ltr';document.querySelectorAll('[data-ar][data-en]').forEach(el=>{el.innerHTML=el.dataset[next]});langButton.textContent=next==='ar'?'EN':'عربي';langButton.setAttribute('aria-label',next==='ar'?'Switch to English':'التبديل إلى العربية')}
+langButton.addEventListener('click',()=>setLanguage(lang==='ar'?'en':'ar'));
+const startButton=document.getElementById('start-top'),toggle=document.getElementById('sound-toggle'),slider=document.getElementById('volume'),consoleEl=document.getElementById('sound-console'),status=document.getElementById('sound-status');
+let audioCtx=null,master=null,nodes=[],playing=false,noiseBuffer=null;
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+function makeNoise(ctx){const length=ctx.sampleRate*4,buffer=ctx.createBuffer(1,length,ctx.sampleRate),data=buffer.getChannelData(0);let last=0;for(let i=0;i<length;i++){const white=Math.random()*2-1;last=(last+.025*white)/1.025;data[i]=last*3.5}return buffer}
+function startSound(){
+ if(playing)return;
+ const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+ if(!AudioContextClass){status.textContent=lang==='ar'?'متصفحك لا يدعم الصوت التفاعلي؛ جرّب غرفة الإصغاء':'Your browser does not support interactive audio; try the Listening Room';return}
+ try{
+  audioCtx=audioCtx||new AudioContextClass();
+  if(audioCtx.state==='suspended')audioCtx.resume();
+  master=audioCtx.createGain();master.gain.value=Number(slider.value);master.connect(audioCtx.destination);
+  const noise=audioCtx.createBufferSource();noise.buffer=noiseBuffer||makeNoise(audioCtx);noiseBuffer=noise.buffer;noise.loop=true;
+  const low=audioCtx.createBiquadFilter();low.type='lowpass';low.frequency.value=360;low.Q.value=.6;
+  const waterGain=audioCtx.createGain();waterGain.gain.value=.42;
+  noise.connect(low);low.connect(waterGain);waterGain.connect(master);noise.start();nodes.push(noise,low,waterGain);
+  const air=audioCtx.createBufferSource();air.buffer=noiseBuffer;air.loop=true;
+  const airFilter=audioCtx.createBiquadFilter();airFilter.type='bandpass';airFilter.frequency.value=940;airFilter.Q.value=.55;
+  const airGain=audioCtx.createGain();airGain.gain.value=.12;
+  const lfo=audioCtx.createOscillator();lfo.type='sine';lfo.frequency.value=.075;
+  const lfoGain=audioCtx.createGain();lfoGain.gain.value=320;lfo.connect(lfoGain);lfoGain.connect(airFilter.frequency);
+  air.connect(airFilter);airFilter.connect(airGain);airGain.connect(master);air.start();lfo.start();nodes.push(air,airFilter,airGain,lfo,lfoGain);
+  const tone=audioCtx.createOscillator();tone.type='sine';tone.frequency.value=55;
+  const toneGain=audioCtx.createGain();toneGain.gain.value=.035;tone.connect(toneGain);toneGain.connect(master);tone.start();nodes.push(tone,toneGain);
+  playing=true;consoleEl.classList.add('is-playing');toggle.textContent='Ⅱ';toggle.setAttribute('aria-pressed','true');toggle.setAttribute('aria-label',lang==='ar'?'إيقاف المشهد الصوتي':'Pause soundscape');status.textContent=lang==='ar'?'المشهد يعمل — يمكنك ضبط شدّة الصوت':'Soundscape playing — adjust the level';
+ }catch(error){status.textContent=lang==='ar'?'تعذّر تشغيل الصوت في هذا المتصفح':'Audio could not start in this browser'}
+}
+function stopSound(){
+ if(!playing)return;
+ nodes.forEach(node=>{try{if(typeof node.stop==='function')node.stop()}catch(error){}try{node.disconnect()}catch(error){}});
+ nodes=[];if(master){try{master.disconnect()}catch(error){}master=null}
+ playing=false;consoleEl.classList.remove('is-playing');toggle.textContent='▶';toggle.setAttribute('aria-pressed','false');toggle.setAttribute('aria-label',lang==='ar'?'تشغيل المشهد الصوتي':'Play soundscape');status.textContent=lang==='ar'?'المشهد متوقف — ابدأ حين تكون مستعدًا':'Soundscape paused — begin when ready';
+}
+toggle.addEventListener('click',()=>playing?stopSound():startSound());
+startButton.addEventListener('click',()=>{if(playing){document.getElementById('sound-console').scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'center'});toggle.focus()}else startSound()});
+slider.addEventListener('input',()=>{if(master&&audioCtx)master.gain.setTargetAtTime(Number(slider.value),audioCtx.currentTime,.08)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing)stopSound()});
+window.addEventListener('pagehide',stopSound);
+const canvas=document.getElementById('sonic-sky'),ctx=canvas.getContext('2d',{alpha:true});let width=0,height=0,dpr=1,raf=0,visible=true,particles=[];
+function resize(){const rect=canvas.getBoundingClientRect();width=rect.width;height=rect.height;dpr=Math.min(window.devicePixelRatio||1,1.5);canvas.width=Math.max(1,Math.round(width*dpr));canvas.height=Math.max(1,Math.round(height*dpr));ctx.setTransform(dpr,0,0,dpr,0,0);particles=Array.from({length:Math.min(85,Math.floor(width/12))},()=>({x:Math.random()*width,y:Math.random()*height,r:Math.random()*1.6+.3,a:Math.random()*.5+.08,s:Math.random()*.12+.025,p:Math.random()*6.28}));draw(0,true)}
+function draw(time,staticFrame=false){if(!ctx)return;ctx.clearRect(0,0,width,height);const t=staticFrame||reduced.matches?0:time*.00012;
+ const glow=ctx.createRadialGradient(width*.58,height*.54,0,width*.58,height*.54,Math.max(width,height)*.72);glow.addColorStop(0,'rgba(24,123,99,.18)');glow.addColorStop(.45,'rgba(18,83,68,.08)');glow.addColorStop(1,'rgba(6,23,20,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,width,height);
+ for(const p of particles){const y=reduced.matches?p.y:p.y+Math.sin(t+p.p)*12;if(!staticFrame&&!reduced.matches&&visible)p.y-=p.s;if(p.y< -4)p.y=height+4;ctx.beginPath();ctx.arc(p.x,y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(198,226,205,'+p.a+')';ctx.fill()}
+ if(!staticFrame&&!reduced.matches&&visible)raf=requestAnimationFrame(draw)}
+function animate(){if(raf)cancelAnimationFrame(raf);raf=0;if(!reduced.matches&&visible)raf=requestAnimationFrame(draw);else draw(0,true)}
+const observer=new IntersectionObserver(entries=>{visible=entries.some(e=>e.isIntersecting);animate()});observer.observe(canvas);
+if('ResizeObserver'in window)new ResizeObserver(()=>{resize();animate()}).observe(canvas);else window.addEventListener('resize',()=>{resize();animate()});
+document.addEventListener('visibilitychange',animate);if(reduced.addEventListener)reduced.addEventListener('change',animate);resize();animate();
+})();
+</script>
+</body>
+</html>
