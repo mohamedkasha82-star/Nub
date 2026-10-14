@@ -1,18 +1,26 @@
-# NŪB — Living Heritage
+# NŪB — Living Atlas
 
-A bilingual, mobile-first cultural experience exploring Nubia as a living, diverse culture.
+NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed as a companion layer to the existing Nubia Odyssey experiences. It does not replace, merge into, or modify the Odyssey projects.
 
-## Current prototype
-- Arabic-first RTL interface with an English language toggle
-- Original abstract river motion artwork (SVG/CSS)
-- Scroll reveals, responsive navigation, reduced-motion support
-- Cultural responsibility notes: prototype status is explicit; no fabricated testimony or unverified claims are presented as established fact
+## Pages
+- `index.html` — cinematic entry point, project relationship, research paths, summary timeline and methodology.
+- `atlas.html` — expanded knowledge layer: historical chronology, Nile geography, displacement, languages and oral tradition, architecture, contemporary continuity, open questions, and inline source links.
+- `sources.html` — source register, source types, methodological boundaries, and editorial principles.
+- `favicon.svg` — original project mark.
+- `.github/workflows/deploy.yml` — isolated GitHub Pages deployment for this repository.
+
+## Research foundations
+The first release links to UNESCO World Heritage records and campaign history, the British Museum's Sudan/Egypt/Nubia chronology, Oxford Academic research on Nubian resettlement, an open-access linguistic study in *Dotawo*, UNESCO intangible-heritage materials, and studies of Nubian architecture. Each source is identified with a stated scope; institutional records, museum overviews and academic research are not treated as interchangeable.
+
+## Cultural and academic integrity
+- The site is an introductory knowledge prototype, not a peer-reviewed or community-reviewed archive.
+- No invented quotations, testimony, vocabulary entries, map coordinates or ethnographic details are presented as evidence.
+- Artistic river visuals are abstract metaphors, not accurate geographic or archaeological maps.
+- New oral histories, language materials, photographs and community knowledge require source provenance, consent, appropriate attribution, licensing and context.
+- Dates and period labels are approximate where indicated; Nubia is not presented as a homogeneous culture or one uninterrupted polity.
 
 ## Run locally
-Open `index.html` in a browser. This is a static site with no build step.
+Open `index.html` in a browser. The project is static HTML/CSS/JavaScript and has no build step. Google Fonts are an optional external dependency; system fallbacks are provided.
 
 ## Deploy
-Import this repository into a **new** Vercel project. Do not connect it to or overwrite any unrelated project.
-
-## Research integrity
-The current experience is an early cultural prototype, not an academically or community-reviewed archive. Future stories and testimony should be added only with verifiable sourcing, appropriate consent, attribution, and context.
+GitHub Pages workflow deploys this repository independently. Do not connect or overwrite any unrelated project. External Nubia Odyssey links are navigation only.
