@@ -5,6 +5,7 @@ NŪB is an independent, Arabic-first bilingual digital knowledge atlas designed 
 ## Pages
 - `index.html` — cinematic entry point, project relationship, research paths, summary timeline and methodology.
 - `case-study.html` — bilingual editorial case study documenting NŪB’s design intent, core modules, technology, academic boundaries, and next steps.
+- `case-study-research.html` — bilingual research-oriented case study documenting the scholarly pathways, Researcher’s Desk, evidence-to-question method, design decisions, validation limits, and reproducible next steps.
 - `atlas.html` — expanded knowledge layer: historical chronology, Nile geography, displacement, languages and oral tradition, architecture, contemporary continuity, open questions, and inline source links.
 - `sources.html` — source register, source types, methodological boundaries, and editorial principles.
 - `culture.html` — bilingual Living Heritage experience covering Nubia before/after displacement, architecture, language, music, food, community memory, source-linked archival collections and consent-aware contribution suggestions.
@@ -79,3 +80,9 @@ The case study now distinguishes three proposed, complementary scholarly pathway
 3. **Digital heritage and archival science** — reproducible counts, holder-level verification, descriptive interoperability and usability evaluation.
 
 Each pathway includes investigable questions, possible outputs and a link to an existing project module. A researcher-engagement brief invites scoped review rather than blanket endorsement. All three are explicitly labelled as proposed pathways; the site does not claim that external review, funding, community consent or completed research has already occurred.
+
+## Research workflow and case-study boundaries
+
+- The Researcher’s Desk is a static, client-side workspace. Pathway filters run in the browser and the review-note template is copied locally; the desk does not submit feedback or collect reviewer identities.
+- The research case study documents implemented interface behavior separately from proposed scholarly methods. It is an author-produced design/research report, not a peer-reviewed publication or evidence of external endorsement.
+- Evidence-to-question is a working method: record a bounded claim, locate and inspect the direct source, describe what it supports, mark unknowns and inferential limits, then formulate a testable next question. A source link alone does not validate every claim on a page.
