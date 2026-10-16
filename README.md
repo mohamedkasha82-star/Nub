@@ -68,3 +68,8 @@ A passing schema check only establishes structural validity. It does not establi
 - The interface does not assume matriarchy, conflate periods, invent oral testimony, or claim the proposed research gap is established. Oral-history work requires appropriate supervision, ethics review, female co-researchers, informed consent, participant review, and a takedown route.
 - The personal field notebook uses browser `localStorage` only, with JSON export and print-to-PDF. It is a convenience feature, not encrypted storage or a secure repository; users are warned not to enter participant identities or sensitive information.
 - No Supabase migration, database, external API, or paid service is used for this layer.
+
+
+## Researcher's Desk
+
+The research dossier includes a bilingual, static Researcher's Desk for three pathways: language and living heritage; history, displacement and memory; and digital heritage/archival science. Pathway filters work locally in the browser, and a review-note template can be copied for offline use. The desk does not collect personal data, submit feedback, or imply that independent academic or community review has occurred. Reviewers should cite direct sources, state uncertainty, distinguish evidence from inference, and consider rights and consent before sharing material.
