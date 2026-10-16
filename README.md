@@ -68,3 +68,14 @@ A passing schema check only establishes structural validity. It does not establi
 - The interface does not assume matriarchy, conflate periods, invent oral testimony, or claim the proposed research gap is established. Oral-history work requires appropriate supervision, ethics review, female co-researchers, informed consent, participant review, and a takedown route.
 - The personal field notebook uses browser `localStorage` only, with JSON export and print-to-PDF. It is a convenience feature, not encrypted storage or a secure repository; users are warned not to enter participant identities or sensitive information.
 - No Supabase migration, database, external API, or paid service is used for this layer.
+
+
+## Three explicit research pathways
+
+The case study now distinguishes three proposed, complementary scholarly pathways rather than presenting NŪB as one undifferentiated research claim:
+
+1. **Nubian languages and living heritage** — provenance-aware description of language-bearing materials, access gaps, and consent for audio/text reuse.
+2. **History, displacement and memory** — comparative reading of institutional records, chronology, maps and images while keeping their scope distinct from community testimony.
+3. **Digital heritage and archival science** — reproducible counts, holder-level verification, descriptive interoperability and usability evaluation.
+
+Each pathway includes investigable questions, possible outputs and a link to an existing project module. A researcher-engagement brief invites scoped review rather than blanket endorsement. All three are explicitly labelled as proposed pathways; the site does not claim that external review, funding, community consent or completed research has already occurred.
