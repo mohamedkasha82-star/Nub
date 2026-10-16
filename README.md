@@ -59,3 +59,12 @@ python -m unittest discover -s tests -v
 ```
 
 A passing schema check only establishes structural validity. It does not establish authenticity, rights, consent, permission to publish, community review, or scholarly verification. The fixture intentionally preserves unknown values rather than inventing missing metadata.
+
+
+## Women in Nubian Memory — exploratory research layer
+
+- `women-memory.html` presents a bilingual, Arabic-first research interface comparing distinct source contexts: Kushite royal representation, medieval legal/economic records, and modern ethnography and displacement studies.
+- The claims cards are explicitly marked **under review**. Bibliographic leads are inherited from the accompanying research proposal and must be checked against the original publications before page-level citation.
+- The interface does not assume matriarchy, conflate periods, invent oral testimony, or claim the proposed research gap is established. Oral-history work requires appropriate supervision, ethics review, female co-researchers, informed consent, participant review, and a takedown route.
+- The personal field notebook uses browser `localStorage` only, with JSON export and print-to-PDF. It is a convenience feature, not encrypted storage or a secure repository; users are warned not to enter participant identities or sensitive information.
+- No Supabase migration, database, external API, or paid service is used for this layer.
