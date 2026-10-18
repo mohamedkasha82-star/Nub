@@ -137,8 +137,6 @@
   const nav=document.createElement('nav');
   nav.className='chapter-handoff';
   nav.setAttribute('aria-label','Chapter navigation');
-  nav.dataset.ar='التنقّل بين فصول الأطلس';
-  nav.dataset.en='Navigate atlas chapters';
   const previous=chapters[(index-1+chapters.length)%chapters.length];
   const next=chapters[(index+1)%chapters.length];
   const makeLink=(target,isNext)=>{
