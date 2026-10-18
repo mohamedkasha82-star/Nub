@@ -91,6 +91,18 @@
 @media(max-width:960px){.nav{gap:13px}.nav a{font-size:.68rem}.hero-grid{grid-template-columns:1fr .86fr}.orbit-stage{min-height:450px}.section{padding:90px 0}}
 @media(max-width:760px){.wrap{width:calc(100% - 34px)}.topbar{height:70px}.nav{display:none;position:absolute;top:70px;right:16px;left:16px;padding:20px;background:#0a2520f7;border:1px solid var(--line);flex-direction:column;align-items:stretch;gap:18px}.nav.open{display:flex}.menu-toggle{display:inline-flex}.topbar .external{display:none}.hero{min-height:auto;padding:118px 0 70px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{position:relative;z-index:2}.hero h1{font-size:clamp(3rem,14vw,5.6rem)}.orbit-stage{min-height:290px;grid-row:1}.orbit{width:min(65vw,330px)}.river-svg{max-width:420px;width:100%}.sun{width:57px}.art-meta{bottom:16px;left:0}.vertical-index{display:none}.scroll-label{display:none}.section{padding:72px 0}.section-head{display:block;margin-bottom:30px}.section-head p{margin-top:16px}.duo,.handoff-grid{grid-template-columns:1fr;gap:25px}.side-note{border-inline-start:0;border-top:1px solid #09221c40;padding:20px 0 0}.stat-row{grid-template-columns:1fr;margin-top:35px}.stat{display:grid;grid-template-columns:95px 1fr;align-items:center;column-gap:15px;padding:17px 20px}.stat strong{grid-row:span 2}.stat span{margin:0}.stat a{margin-top:6px}.chapter-grid{grid-template-columns:1fr}.chapter{min-height:290px;padding:23px}.chapter-icon{width:72px;height:72px;margin-block:12px}.timeline{grid-template-columns:1fr;gap:25px}.timeline:before{top:0;bottom:0;left:auto;right:5px;width:1px;height:auto;background:linear-gradient(transparent,var(--aqua),var(--gold),transparent)}.time-node{padding:0 28px 0 0}.time-node:before{top:3px;right:0}.time-node h3{margin:8px 0 5px}.ethics-grid{grid-template-columns:1fr;gap:25px}.endnote,.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{gap:12px}.rtl-off .side-note{border-inline-end:0;border-top:1px solid #09221c40;padding:20px 0 0}.rtl-off .time-node{padding:0 0 0 28px}.rtl-off .time-node:before{right:auto;left:0}.rtl-off .timeline:before{right:auto;left:5px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Living Nile scroll choreography: a small, scroll-linked camera drift rather than a heavy animation library. */
+.hero{--hero-drift:0px;--copy-drift:0px;--orbit-drift:0px;--copy-opacity:1}
+.hero .hero-film{transform:translate3d(0,var(--hero-drift),0) scale(1.045);transition:filter .6s ease}
+.hero .river-canvas{transform:translate3d(0,calc(var(--hero-drift)*.72),0)}
+.hero .hero-copy{transform:translate3d(0,var(--copy-drift),0);opacity:var(--copy-opacity)}
+.hero .orbit-stage{transform:translate3d(0,var(--orbit-drift),0)}
+.hero .hero-copy,.hero .orbit-stage{will-change:transform}
+@media(prefers-reduced-motion:reduce){
+ .hero .hero-film,.hero .river-canvas,.hero .hero-copy,.hero .orbit-stage{transform:none!important;opacity:1!important;will-change:auto}
+}
+
 </style>
 </head>
 <body>
@@ -119,7 +131,7 @@
 <p class="hero-desc" data-ar="NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة." data-en="NŪB extends the Nubia Odyssey journey into an explorable layer of knowledge: histories with many centres, a river that connects without flattening, languages, architecture and human memory — with sources visible rather than hidden behind beautiful images.">NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة.</p>
 <div class="hero-cta"><button class="button journey-launch" id="journey-open" type="button" aria-haspopup="dialog"><span data-ar="ابدأ الرحلة السينمائية" data-en="Begin the cinematic journey">ابدأ الرحلة السينمائية</span><span aria-hidden="true">↗</span></button><a class="button" href="./atlas.html"><span data-ar="ادخل الأطلس المعرفي" data-en="Enter the living atlas">ادخل الأطلس المعرفي</span><span aria-hidden="true">↙</span></a><a class="button ghost" href="./culture.html"><span data-ar="ذاكرة النوبة الحيّة" data-en="Living Nubian Heritage">ذاكرة النوبة الحيّة</span> ↗</a><a class="button ghost" href="./soundscape.html"><span data-ar="اختبر أطلس الصوت الحي" data-en="Enter the Sonic Atlas">اختبر أطلس الصوت الحي</span> ↗</a><a class="button ghost" href="https://nubia-odyssey-clean.vercel.app/#lineage" target="_blank" rel="noopener noreferrer" data-ar="ارجع إلى خط النسب في Odyssey ↗" data-en="Return to Odyssey lineage ↗">ارجع إلى خط النسب في Odyssey ↗</a></div>
 </div>
-<details class="voice-note"><summary data-ar="▶ اسمع مقدمة النيل الحي" data-en="▶ Listen to the Living Nile intro">▶ اسمع مقدمة النيل الحي</summary><audio controls preload="none" src="https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d4857d0c-655b-44e1-8cd6-6732cea609dd.mp3" aria-label="مقدمة صوتية تجريبية عن النيل الحي"></audio><small data-ar="صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا." data-en="AI-generated concept narration for design testing; not an authentic Nubian testimony or recording.">صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا.</small></details>
+<details class="voice-note"><summary data-ar="▶ اسمع مقدمة النيل الحي" data-en="▶ Listen to the Living Nile intro">▶ اسمع مقدمة النيل الحي</summary><audio controls preload="none" src="https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/b71c9169-fd74-4764-9864-9c2d38baf72d.mp3" aria-label="مقدمة صوتية تجريبية عن النيل الحي"></audio><small data-ar="صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا." data-en="AI-generated concept narration for design testing; not an authentic Nubian testimony or recording.">صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا.</small></details>
 <div class="orbit-stage" aria-label="رسم تجريدي متحرك مستلهم من النهر والطبقات الزمنية">
 <div class="orbit"></div><div class="sun"></div>
 <svg class="river-svg" viewBox="0 0 620 540" role="img" aria-label="مسارات تجريدية متقاطعة تمثل المكان والذاكرة والزمن">
@@ -289,5 +301,32 @@ if(finePointer&&!motionQuery.matches){
 }
 
 })();
+
+/* Scroll-linked hero camera: progressive enhancement, frame-batched, disabled for reduced-motion preferences. */
+(()=>{
+ const hero=document.querySelector('.hero');
+ const film=document.getElementById('hero-film');
+ const river=document.getElementById('living-river');
+ const copy=hero?.querySelector('.hero-copy');
+ const orbit=hero?.querySelector('.orbit-stage');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ if(!hero||reduced.matches)return;
+ let queued=false;
+ const update=()=>{
+  queued=false;
+  const rect=hero.getBoundingClientRect();
+  const progress=Math.max(0,Math.min(1,(-rect.top)/(Math.max(1,rect.height)*.82)));
+  hero.style.setProperty('--hero-drift',(-progress*26).toFixed(2)+'px');
+  hero.style.setProperty('--copy-drift',(-progress*12).toFixed(2)+'px');
+  hero.style.setProperty('--orbit-drift',(progress*16).toFixed(2)+'px');
+  hero.style.setProperty('--copy-opacity',(1-progress*.2).toFixed(3));
+ };
+ const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(update)}};
+ addEventListener('scroll',schedule,{passive:true});
+ addEventListener('resize',schedule,{passive:true});
+ reduced.addEventListener?.('change',event=>{if(event.matches){removeEventListener('scroll',schedule);removeEventListener('resize',schedule);hero.style.removeProperty('--hero-drift');hero.style.removeProperty('--copy-drift');hero.style.removeProperty('--orbit-drift');hero.style.removeProperty('--copy-opacity')}});
+ schedule();
+})();
+
 </script>
 </body></html>
