@@ -93,9 +93,9 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
 /* Living Nile scroll choreography: a small, scroll-linked camera drift rather than a heavy animation library. */
-.hero{--hero-drift:0px;--copy-drift:0px;--orbit-drift:0px;--copy-opacity:1}
+.hero{--hero-drift:0px;--river-drift:0px;--copy-drift:0px;--orbit-drift:0px;--copy-opacity:1}
 .hero .hero-film{transform:translate3d(0,var(--hero-drift),0) scale(1.045);transition:filter .6s ease}
-.hero .river-canvas{transform:translate3d(0,calc(var(--hero-drift)*.72),0)}
+.hero .river-canvas{transform:translate3d(0,var(--river-drift),0)}
 .hero .hero-copy{transform:translate3d(0,var(--copy-drift),0);opacity:var(--copy-opacity)}
 .hero .orbit-stage{transform:translate3d(0,var(--orbit-drift),0)}
 .hero .hero-copy,.hero .orbit-stage{will-change:transform}
@@ -317,6 +317,7 @@ if(finePointer&&!motionQuery.matches){
   const rect=hero.getBoundingClientRect();
   const progress=Math.max(0,Math.min(1,(-rect.top)/(Math.max(1,rect.height)*.82)));
   hero.style.setProperty('--hero-drift',(-progress*26).toFixed(2)+'px');
+  hero.style.setProperty('--river-drift',(-progress*18.72).toFixed(2)+'px');
   hero.style.setProperty('--copy-drift',(-progress*12).toFixed(2)+'px');
   hero.style.setProperty('--orbit-drift',(progress*16).toFixed(2)+'px');
   hero.style.setProperty('--copy-opacity',(1-progress*.2).toFixed(3));
@@ -324,7 +325,7 @@ if(finePointer&&!motionQuery.matches){
  const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(update)}};
  addEventListener('scroll',schedule,{passive:true});
  addEventListener('resize',schedule,{passive:true});
- reduced.addEventListener?.('change',event=>{if(event.matches){removeEventListener('scroll',schedule);removeEventListener('resize',schedule);hero.style.removeProperty('--hero-drift');hero.style.removeProperty('--copy-drift');hero.style.removeProperty('--orbit-drift');hero.style.removeProperty('--copy-opacity')}});
+ reduced.addEventListener?.('change',event=>{if(event.matches){removeEventListener('scroll',schedule);removeEventListener('resize',schedule);hero.style.removeProperty('--hero-drift');hero.style.removeProperty('--river-drift');hero.style.removeProperty('--copy-drift');hero.style.removeProperty('--orbit-drift');hero.style.removeProperty('--copy-opacity')}});
  schedule();
 })();
 
