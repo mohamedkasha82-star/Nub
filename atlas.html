@@ -12,7 +12,22 @@
 @keyframes flow{to{stroke-dashoffset:-400}}
 @media(max-width:760px){.wrap{width:calc(100% - 34px)}.top{height:68px}.toplinks{gap:11px;font-size:.65rem}.toplinks a:nth-child(2){display:none}.hero{padding:55px 0 32px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-art{height:230px;grid-row:1}.rings{width:165px}.hero h1{font-size:clamp(2.7rem,13vw,4.9rem);margin:12px 0}.hero p{font-size:.8rem}.hero-foot{font-size:8px;flex-direction:column}.toolsbar .wrap{align-items:stretch;flex-direction:column}.searchbox{width:100%}.filters{gap:5px}.filter{font-size:.62rem}.content{padding:50px 0}.section{padding:10px 0 47px}.section-head{grid-template-columns:1fr;gap:5px;margin-bottom:15px}.section-no{padding-top:0}.era{grid-template-columns:1fr;gap:7px;padding:18px 0}.era:before{right:auto;left:0;top:23px}.era-date{padding:0 20px 0 0}.rtl-off .era:before{left:auto;right:0}.rtl-off .era-date{padding:0 0 0 20px}.grid3,.twocol,.questions{grid-template-columns:1fr}.knowledge-card{min-height:0}.bib{grid-template-columns:42px 1fr;gap:11px}.bib a{grid-column:2}.footer-inner{flex-direction:column;align-items:flex-start}.rtl-off .note{border-inline-end:0;border-inline-start:2px solid var(--gold)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
-.chapter-rail{position:relative;z-index:8;background:#0a211df2;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.chapter-rail-inner{width:min(var(--max),calc(100% - 48px));margin:auto;padding:13px 0 10px}.chapter-rail-label{font:600 .58rem var(--en);letter-spacing:.14em;color:var(--gold);margin-bottom:8px}.chapter-steps{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#68d6c044 transparent;padding:2px 1px 8px}.chapter-steps a{flex:0 0 auto;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:.66rem;transition:background .2s,border-color .2s,color .2s}.chapter-steps a span{font:10px var(--en);color:var(--aqua)}.chapter-steps a b{font-weight:500}.chapter-steps a[aria-current="step"]{background:#68d6c015;border-color:#68d6c088;color:var(--ink)}.chapter-steps a[aria-current="step"] b{color:var(--aqua)}.chapter-progress{height:2px;background:#dceee312;overflow:hidden}.chapter-progress span{display:block;width:12.5%;height:100%;background:linear-gradient(90deg,var(--aqua),var(--gold));transition:width .3s ease}@media(max-width:640px){.chapter-rail-inner{width:calc(100% - 28px)}.chapter-rail-label{font-size:.55rem}.chapter-steps a{padding:7px 10px}.chapter-steps a b{font-size:.65rem}}@media(prefers-reduced-motion:reduce){.chapter-steps a,.chapter-progress span{transition:none}}</style>
+.chapter-rail{position:relative;z-index:8;background:#0a211df2;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.chapter-rail-inner{width:min(var(--max),calc(100% - 48px));margin:auto;padding:13px 0 10px}.chapter-rail-label{font:600 .58rem var(--en);letter-spacing:.14em;color:var(--gold);margin-bottom:8px}.chapter-steps{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#68d6c044 transparent;padding:2px 1px 8px}.chapter-steps a{flex:0 0 auto;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--muted);font-size:.66rem;transition:background .2s,border-color .2s,color .2s}.chapter-steps a span{font:10px var(--en);color:var(--aqua)}.chapter-steps a b{font-weight:500}.chapter-steps a[aria-current="step"]{background:#68d6c015;border-color:#68d6c088;color:var(--ink)}.chapter-steps a[aria-current="step"] b{color:var(--aqua)}.chapter-progress{height:2px;background:#dceee312;overflow:hidden}.chapter-progress span{display:block;width:12.5%;height:100%;background:linear-gradient(90deg,var(--aqua),var(--gold));transition:width .3s ease}@media(max-width:640px){.chapter-rail-inner{width:calc(100% - 28px)}.chapter-rail-label{font-size:.55rem}.chapter-steps a{padding:7px 10px}.chapter-steps a b{font-size:.65rem}}@media(prefers-reduced-motion:reduce){.chapter-steps a,.chapter-progress span{transition:none}}
+/* Narrative handoffs connect existing atlas chapters without adding historical claims or media. */
+.chapter-handoff{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;margin:34px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.chapter-handoff a{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:74px;padding:15px 17px;border:1px solid var(--line);background:linear-gradient(125deg,#0c2821,#091e19);transition:border-color .2s,background .2s}
+.chapter-handoff a:hover{border-color:#68d6c088;background:linear-gradient(125deg,#10372d,#0c2821)}
+.chapter-handoff a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.chapter-handoff .handoff-kicker{display:block;font:600 .56rem var(--en);letter-spacing:.12em;color:var(--gold);margin-bottom:5px}
+.chapter-handoff .handoff-title{display:block;color:var(--ink);font-size:.78rem}
+ .chapter-handoff .handoff-arrow{font-size:1.15rem;color:var(--aqua);flex:0 0 auto}
+.rtl-off .chapter-handoff .handoff-arrow{transform:scaleX(-1)}
+.chapter-handoff .next{border-color:#68d6c044;background:linear-gradient(125deg,#10372d,#0c2821)}
+.chapter-handoff .next .handoff-title{color:var(--aqua)}
+@media(max-width:600px){.chapter-handoff{grid-template-columns:1fr;gap:8px;margin-top:25px}.chapter-handoff a{min-height:64px;padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){.chapter-handoff a{transition:none}}
+
+</style>
 </head>
 <body>
 <header class="top wrap">
@@ -102,5 +117,62 @@
 <footer class="footer"><div class="wrap footer-inner"><strong>NŪB / ATLAS</strong><span data-ar="الأطلس المعرفي التمهيدي — نسخة 2026. مشروع مستقل متصل بـNubia Odyssey." data-en="Introductory knowledge atlas — 2026 edition. An independent companion to Nubia Odyssey.">الأطلس المعرفي التمهيدي — نسخة 2026. مشروع مستقل متصل بـNubia Odyssey.</span><div class="footer-links"><a href="./index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="./sources.html" data-ar="غرفة المصادر" data-en="Source room">غرفة المصادر</a><a href="./fieldwork.html" data-ar="دليل التوثيق" data-en="Fieldwork guide">دليل التوثيق</a></div></div></footer>
 <script>
 (()=>{let lang='ar';const langBtn=document.getElementById('lang');function setLanguage(next){lang=next;document.documentElement.lang=next;document.documentElement.dir=next==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl-off',next==='en');document.querySelectorAll('[data-ar][data-en]').forEach(el=>el.innerHTML=el.dataset[next]);langBtn.textContent=next==='ar'?'EN':'عربي';applyFilters();}langBtn.addEventListener('click',()=>setLanguage(lang==='ar'?'en':'ar'));let active='all';const buttons=[...document.querySelectorAll('[data-filter]')];const search=document.getElementById('search');function applyFilters(){const q=search.value.trim().toLocaleLowerCase();let shown=0;document.querySelectorAll('#atlas-content [data-tags]').forEach(el=>{const tags=(el.dataset.tags||'').split(/\s+/);const category=active==='all'||tags.includes(active);const text=el.innerText.toLocaleLowerCase();const matches=!q||text.includes(q);const yes=category&&matches;el.classList.toggle('hidden-by-filter',!yes);if(yes)shown++;});document.getElementById('empty').style.display=shown?'none':'block';}buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));applyFilters();}));search.addEventListener('input',applyFilters);document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});history.replaceState(null,'',a.getAttribute('href'));}}));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));const chapterLinks=[...document.querySelectorAll('[data-chapter]')];const chapterSections=chapterLinks.map(a=>document.getElementById(a.dataset.chapter)).filter(Boolean);const chapterProgress=document.getElementById('chapterProgress');function markChapter(id){const index=chapterLinks.findIndex(a=>a.dataset.chapter===id);chapterLinks.forEach(a=>{if(a.dataset.chapter===id)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')});if(chapterProgress&&index>=0)chapterProgress.style.width=((index+1)/chapterLinks.length*100)+'%'}const chapterObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)markChapter(visible.target.id)},{rootMargin:'-18% 0px -58% 0px',threshold:[0,.1,.25,.5]});chapterSections.forEach(section=>chapterObserver.observe(section));chapterLinks.forEach(a=>a.addEventListener('click',()=>markChapter(a.dataset.chapter)));})();
+
+/* Chapter handoffs: progressive, bilingual navigation between the eight existing atlas stops. */
+(()=> {
+ const chapters=[
+  {id:'longue-duree',ar:'الزمن',en:'Time'},
+  {id:'place',ar:'المكان',en:'Place'},
+  {id:'displacement',ar:'التهجير',en:'Displacement'},
+  {id:'language',ar:'اللغة',en:'Language'},
+  {id:'architecture',ar:'العمارة',en:'Architecture'},
+  {id:'living-culture',ar:'الحياة الحية',en:'Living culture'},
+  {id:'research-questions',ar:'أسئلة مفتوحة',en:'Open questions'},
+  {id:'evidence',ar:'الأدلة والمصادر',en:'Evidence & sources'}
+ ];
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ chapters.forEach((chapter,index)=>{
+  const section=document.getElementById(chapter.id);
+  if(!section||section.querySelector('.chapter-handoff'))return;
+  const nav=document.createElement('nav');
+  nav.className='chapter-handoff';
+  nav.setAttribute('aria-label','Chapter navigation');
+  const previous=chapters[(index-1+chapters.length)%chapters.length];
+  const next=chapters[(index+1)%chapters.length];
+  const makeLink=(target,isNext)=>{
+   const link=document.createElement('a');
+   link.href='#'+target.id;
+   link.className=isNext?'next':'previous';
+   const copy=document.createElement('span');
+   const kicker=document.createElement('span');
+   kicker.className='handoff-kicker';
+   kicker.dataset.ar=isNext?'المحطة التالية':'المحطة السابقة';
+   kicker.dataset.en=isNext?'NEXT CHAPTER':'PREVIOUS CHAPTER';
+   kicker.textContent=isNext?'المحطة التالية':'المحطة السابقة';
+   const title=document.createElement('span');
+   title.className='handoff-title';
+   title.dataset.ar=target.ar;
+   title.dataset.en=target.en;
+   title.textContent=target.ar;
+   copy.append(kicker,title);
+   const arrow=document.createElement('span');
+   arrow.className='handoff-arrow';
+   arrow.setAttribute('aria-hidden','true');
+   arrow.textContent=isNext?'←':'→';
+   link.append(copy,arrow);
+   link.addEventListener('click',event=>{
+    const destination=document.getElementById(target.id);
+    if(!destination)return;
+    event.preventDefault();
+    destination.scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});
+    history.replaceState(null,'','#'+target.id);
+   });
+   return link;
+  };
+  nav.append(makeLink(previous,false),makeLink(next,true));
+  section.append(nav);
+ });
+})();
+
 </script>
 </body></html>
