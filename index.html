@@ -125,6 +125,76 @@
 @media(prefers-reduced-motion:reduce){.threshold-map path{animation:none;stroke-dasharray:none}}
 @media(forced-colors:active){.river-threshold,.threshold-content h2,.threshold-content p{forced-color-adjust:auto}.threshold-map{display:none}}
 
+
+/* NŪB Liquid Glass navigation — progressive enhancement, no framework or external dependency. */
+.topbar{
+ position:fixed;top:max(12px,env(safe-area-inset-top));left:50%;right:auto;transform:translateX(-50%);
+ z-index:110;width:min(var(--max),calc(100% - 36px));height:70px;padding:0 clamp(13px,2vw,24px);
+ border:1px solid rgba(220,238,227,.17);border-radius:999px;
+ background:rgba(6,23,20,.58);
+ -webkit-backdrop-filter:blur(20px) saturate(145%);backdrop-filter:blur(20px) saturate(145%);
+ box-shadow:0 12px 40px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.055);
+ transition:background .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.topbar.is-scrolled{background:rgba(5,20,17,.88);border-color:rgba(104,214,192,.28);box-shadow:0 14px 42px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06)}
+.topbar .brand{flex-shrink:0}
+.topbar .nav{flex:1;min-width:0;max-width:58%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;white-space:nowrap;gap:clamp(9px,1.15vw,18px);padding:8px 4px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.topbar .nav::-webkit-scrollbar{display:none}
+.topbar .nav a{font-size:clamp(.57rem,.64vw,.7rem);flex-shrink:0}
+.topbar .actions{flex-shrink:0}
+.topbar .pill{background:rgba(255,255,255,.035);border-color:rgba(220,238,227,.18)}
+.topbar .pill:focus-visible,.topbar .nav a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .topbar{background:rgba(6,23,20,.96)}
+}
+@media(max-width:1100px){.topbar .nav{max-width:48%;gap:10px}.topbar .nav a{font-size:.59rem}}
+@media(max-width:760px){
+ .topbar{top:max(8px,env(safe-area-inset-top));width:calc(100% - 24px);height:60px;padding:0 12px;border-radius:22px}
+ .topbar .nav{display:none;position:absolute;top:calc(100% + 10px);right:0;left:0;width:100%;max-width:none;max-height:min(70svh,560px);overflow-y:auto;overflow-x:hidden;padding:17px;background:rgba(5,22,19,.94);border:1px solid rgba(220,238,227,.19);border-radius:20px;flex-direction:column;align-items:stretch;gap:0;mask-image:none;-webkit-mask-image:none;box-shadow:0 20px 60px rgba(0,0,0,.38);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%)}
+ .topbar .nav.open{display:flex}
+ .topbar .nav a{font-size:.78rem;white-space:normal;padding:12px 8px;border-bottom:1px solid rgba(220,238,227,.08)}
+ .topbar .nav a:last-child{border-bottom:0}
+ .topbar .external{display:none}
+ .topbar .menu-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:42px;font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){.topbar,.topbar .pill{transition:none!important}}
+
+
+/* Riverlight refinement: glass controls, intentional focus, and reduced-motion-safe entrance. */
+.hero .kicker{
+ background:rgba(6,23,20,.46);
+ border-color:rgba(220,238,227,.19);
+ -webkit-backdrop-filter:blur(12px) saturate(135%);
+ backdrop-filter:blur(12px) saturate(135%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 8px 26px rgba(0,0,0,.08)
+}
+.hero-cta .button:not(:first-child){
+ background:rgba(8,29,25,.54);
+ color:var(--ivory);
+ border:1px solid rgba(220,238,227,.2);
+ -webkit-backdrop-filter:blur(14px) saturate(145%);
+ backdrop-filter:blur(14px) saturate(145%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.045)
+}
+.hero-cta .button:not(:first-child):hover{
+ border-color:rgba(104,214,192,.62);
+ box-shadow:0 14px 36px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.06)
+}
+.hero .button:focus-visible,.topbar .menu-toggle:focus-visible,.topbar .nav a:focus-visible{
+ outline:2px solid var(--gold);outline-offset:4px
+}
+.hero .hero-copy{animation:nubHeroRise .85s cubic-bezier(.2,.72,.25,1) both}
+@keyframes nubHeroRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .hero .kicker,.hero-cta .button:not(:first-child){background:rgba(6,23,20,.94)}
+}
+@media(max-width:760px){
+ .hero .hero-cta .button{width:100%;justify-content:space-between}
+ .hero .hero-cta .button:not(:first-child){justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){.hero .hero-copy{animation:none!important}}
+@media(forced-colors:active){.hero-cta .button:not(:first-child){backdrop-filter:none;border:1px solid ButtonText}}
+
 </style>
 </head>
 <body>
@@ -411,6 +481,29 @@ if(finePointer&&!motionQuery.matches){
  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else play()});
  reduce.addEventListener?.('change',event=>{if(event.matches)pause();else play()});
  if(source)source.addEventListener('error',()=>{hero.classList.add('hero-film-unavailable')},{once:true});
+})();
+</script>
+
+
+<script>
+/* Keep the glass navigation legible after the opening frame; passive and frame-light. */
+(()=> {
+ const bar=document.querySelector('.topbar');
+ const nav=document.getElementById('nav');
+ const menu=document.getElementById('menu');
+ if(!bar)return;
+ let queued=false;
+ const update=()=>{queued=false;bar.classList.toggle('is-scrolled',window.scrollY>24)};
+ const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(update)}};
+ window.addEventListener('scroll',schedule,{passive:true});
+ update();
+ if(menu&&nav){
+  document.addEventListener('keydown',event=>{
+   if(event.key==='Escape'&&nav.classList.contains('open')){
+    nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';menu.focus();
+   }
+  });
+ }
 })();
 </script>
 
