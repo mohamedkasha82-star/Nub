@@ -122,7 +122,7 @@
 </header>
 <main>
 <section class="hero" id="top">
-<video class="hero-film" id="hero-film" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
+<video class="hero-film" id="hero-film" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-lazy-play="true"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
 <canvas class="river-canvas" id="living-river" aria-hidden="true"></canvas>
 <div class="wrap hero-grid">
 <div class="hero-copy">
@@ -330,4 +330,45 @@ if(finePointer&&!motionQuery.matches){
 })();
 
 </script>
+
+<script>
+/* Respectful cinematic media: load motion only when useful, and never autoplay for reduced-motion/data-saving visitors. */
+(()=> {
+ const hero=document.getElementById('top');
+ const film=document.getElementById('hero-film');
+ if(!hero||!film)return;
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const saveData=!!(navigator.connection&&navigator.connection.saveData);
+ const canAnimate=()=>!reduce.matches&&!saveData&&!document.hidden;
+ let inView=false;
+ let loaded=false;
+ const source=film.querySelector('source');
+ const prepare=()=>{
+  if(loaded||!source)return;
+  loaded=true;
+  film.load();
+ };
+ const play=()=>{
+  if(!canAnimate()||!inView)return;
+  prepare();
+  const attempt=film.play();
+  if(attempt&&typeof attempt.catch==='function')attempt.catch(()=>{});
+ };
+ const pause=()=>film.pause();
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+   inView=entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>.12);
+   if(inView)play();else pause();
+  },{threshold:[0,.12,.35]});
+  observer.observe(hero);
+ }else{
+  inView=true;
+  if(canAnimate())play();
+ }
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else play()});
+ reduce.addEventListener?.('change',event=>{if(event.matches)pause();else play()});
+ if(source)source.addEventListener('error',()=>{hero.classList.add('hero-film-unavailable')},{once:true});
+})();
+</script>
+
 </body></html>
