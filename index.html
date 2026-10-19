@@ -103,6 +103,28 @@
  .hero .hero-film,.hero .river-canvas,.hero .hero-copy,.hero .orbit-stage{transform:none!important;opacity:1!important;will-change:auto}
 }
 
+
+/* River-to-atlas threshold: a lightweight narrative bridge, built from native SVG/CSS. */
+.river-threshold{position:relative;isolation:isolate;min-height:min(82vh,850px);display:grid;align-items:center;overflow:hidden;background:linear-gradient(180deg,#071a17 0%,#0b2c25 45%,#081d19 100%);border-block:1px solid #68d6c01a}
+.river-threshold:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 48%,#68d6c018,transparent 52%),linear-gradient(90deg,#061714 0%,transparent 40%,#061714 100%)}
+.threshold-map{position:absolute;inset:0;width:100%;height:100%;opacity:.8;pointer-events:none}
+.threshold-map path{fill:none;stroke:url(#thresholdRiver);stroke-width:1.1;stroke-dasharray:8 13;stroke-linecap:round;animation:threshold-flow 24s linear infinite}
+.threshold-map path:nth-child(2n){stroke-width:.65;opacity:.52;animation-duration:34s;animation-direction:reverse}
+.threshold-map circle{fill:#e6c27b;filter:drop-shadow(0 0 7px #e6c27b88)}
+.threshold-content{position:relative;z-index:1;width:min(850px,calc(100% - 40px));margin-inline:auto;text-align:center;padding:100px 0}
+.threshold-index{display:inline-flex;align-items:center;gap:12px;font:10px var(--en);letter-spacing:.2em;color:#a5c5b8}
+.threshold-index:before,.threshold-index:after{content:"";height:1px;width:34px;background:#68d6c066}
+.threshold-content h2{font-size:clamp(2.3rem,6.2vw,6rem);line-height:1.22;font-weight:400;letter-spacing:-.055em;margin:28px 0 20px;color:#f2f0e6}
+.threshold-content h2 span{display:block;color:var(--gold);font-weight:300}
+.threshold-content p{max-width:570px;margin:0 auto;color:#b9cec3;font-size:clamp(.9rem,1.35vw,1.05rem);line-height:2.15}
+.threshold-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.threshold-actions .button{min-width:170px}
+.threshold-note{display:block;margin-top:25px;color:#91ada1;font-size:.68rem;letter-spacing:.04em}
+@keyframes threshold-flow{to{stroke-dashoffset:-168}}
+@media(max-width:760px){.river-threshold{min-height:68svh}.threshold-content{padding:76px 0}.threshold-map{opacity:.54}.threshold-content h2{font-size:clamp(2.2rem,11vw,4rem)}}
+@media(prefers-reduced-motion:reduce){.threshold-map path{animation:none;stroke-dasharray:none}}
+@media(forced-colors:active){.river-threshold,.threshold-content h2,.threshold-content p{forced-color-adjust:auto}.threshold-map{display:none}}
+
 </style>
 </head>
 <body>
@@ -122,7 +144,7 @@
 </header>
 <main>
 <section class="hero" id="top">
-<video class="hero-film" id="hero-film" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
+<video class="hero-film" id="hero-film" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-lazy-play="true"><source src="https://cdn.creativeclaw.co/u/f7a9f881/videos/5e53e910-b73f-4677-8c27-f8a7f7412ef8.mp4" type="video/mp4"></video>
 <canvas class="river-canvas" id="living-river" aria-hidden="true"></canvas>
 <div class="wrap hero-grid">
 <div class="hero-copy">
@@ -164,6 +186,27 @@
     <small data-ar="تجربة بصرية تمهيدية؛ ليست مادة أرشيفية أو بديلًا عن التوثيق والمراجعة المجتمعية." data-en="An introductory visual experience; not archival footage or a substitute for documentation and community review.">تجربة بصرية تمهيدية؛ ليست مادة أرشيفية أو بديلًا عن التوثيق والمراجعة المجتمعية.</small>
   </div>
 </dialog>
+
+
+<section class="river-threshold" id="river-threshold" aria-labelledby="threshold-title">
+<svg class="threshold-map" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="thresholdRiver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#68d6c0" stop-opacity=".08"/><stop offset=".48" stop-color="#68d6c0" stop-opacity=".72"/><stop offset=".78" stop-color="#e6c27b" stop-opacity=".55"/><stop offset="1" stop-color="#dd7957" stop-opacity=".12"/></linearGradient></defs>
+<path d="M-80 120C180 40 260 290 510 260S790 70 1010 190 1240 390 1530 250"/>
+<path d="M-80 190C180 110 260 360 510 330S790 140 1010 260 1240 460 1530 320"/>
+<path d="M-80 260C180 180 260 430 510 400S790 210 1010 330 1240 530 1530 390"/>
+<path d="M-80 520C180 440 260 690 510 660S790 470 1010 590 1240 790 1530 650"/>
+<path d="M-80 590C180 510 260 760 510 730S790 540 1010 660 1240 860 1530 720"/>
+<path d="M-80 450C170 520 320 410 500 470S760 650 940 520 1210 350 1530 470"/>
+<circle cx="510" cy="330" r="3"/><circle cx="1010" cy="260" r="3"/><circle cx="940" cy="520" r="3"/>
+</svg>
+<div class="threshold-content">
+<div class="threshold-index" data-ar="من المشهد إلى الدليل" data-en="FROM ATMOSPHERE TO EVIDENCE">من المشهد إلى الدليل</div>
+<h2 id="threshold-title" data-ar="النهر يفتح الباب. <span>والمعرفة تكمل الرحلة.</span>" data-en="The river opens the door. <span>Knowledge carries us further.</span>">النهر يفتح الباب. <span>والمعرفة تكمل الرحلة.</span></h2>
+<p data-ar="وراء الضوء والماء حكايات متعدّدة: أماكن، ولغات، وعمارة، وذاكرة تهجير، وحياة نوبية معاصرة. ندخلها بفضول، ونقرأها بسياق، ونتتبّع ما نعرفه وما لا يزال يحتاج إلى توثيق." data-en="Beyond light and water are many stories: places, languages, architecture, displacement memory, and contemporary Nubian life. We enter with curiosity, read with context, and trace what is known alongside what still needs documentation.">وراء الضوء والماء حكايات متعدّدة: أماكن، ولغات، وعمارة، وذاكرة تهجير، وحياة نوبية معاصرة. ندخلها بفضول، ونقرأها بسياق، ونتتبّع ما نعرفه وما لا يزال يحتاج إلى توثيق.</p>
+<div class="threshold-actions"><a class="button" href="./atlas.html"><span data-ar="ادخل الأطلس الحي" data-en="Enter the living atlas">ادخل الأطلس الحي</span><span aria-hidden="true">↗</span></a><a class="button ghost" href="./sources.html"><span data-ar="تتبّع المصادر" data-en="Follow the sources">تتبّع المصادر</span><span aria-hidden="true">↗</span></a></div>
+<small class="threshold-note" data-ar="الصورة التجريدية هنا رسم واجهة، وليست خريطة جغرافية أو سجلًا تاريخيًا." data-en="This abstract visual is interface artwork, not a geographic map or historical record.">الصورة التجريدية هنا رسم واجهة، وليست خريطة جغرافية أو سجلًا تاريخيًا.</small>
+</div>
+</section>
 
 <section class="section paper" id="approach"><div class="wrap">
 <div class="section-head reveal"><div><div class="eyebrow" data-ar="01 — زاوية الرؤية" data-en="01 — THE LENS">01 — زاوية الرؤية</div><h2 data-ar="من شجرة النسب إلى <span>غابة العلاقات.</span>" data-en="From a lineage tree to <span>a forest of connections.</span>">من شجرة النسب إلى <span>غابة العلاقات.</span></h2></div><p data-ar="تمنحنا Odyssey نقطة دخول قوية إلى النسب والسرد. يضيف NŪB طبقة أخرى: ماذا حدث حول هذه الروابط؟ وأين نجد الدليل؟ وأي أصوات ما زالت غائبة؟" data-en="Odyssey offers a powerful entry point into lineage and narrative. NŪB adds another layer: what surrounded these connections, where is the evidence, and whose voices are still missing?">تمنحنا Odyssey نقطة دخول قوية إلى النسب والسرد. يضيف NŪB طبقة أخرى: ماذا حدث حول هذه الروابط؟ وأين نجد الدليل؟ وأي أصوات ما زالت غائبة؟</p></div>
@@ -330,4 +373,45 @@ if(finePointer&&!motionQuery.matches){
 })();
 
 </script>
+
+<script>
+/* Respectful cinematic media: load motion only when useful, and never autoplay for reduced-motion/data-saving visitors. */
+(()=> {
+ const hero=document.getElementById('top');
+ const film=document.getElementById('hero-film');
+ if(!hero||!film)return;
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const saveData=!!(navigator.connection&&navigator.connection.saveData);
+ const canAnimate=()=>!reduce.matches&&!saveData&&!document.hidden;
+ let inView=false;
+ let loaded=false;
+ const source=film.querySelector('source');
+ const prepare=()=>{
+  if(loaded||!source)return;
+  loaded=true;
+  film.load();
+ };
+ const play=()=>{
+  if(!canAnimate()||!inView)return;
+  prepare();
+  const attempt=film.play();
+  if(attempt&&typeof attempt.catch==='function')attempt.catch(()=>{});
+ };
+ const pause=()=>film.pause();
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+   inView=entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>.12);
+   if(inView)play();else pause();
+  },{threshold:[0,.12,.35]});
+  observer.observe(hero);
+ }else{
+  inView=true;
+  if(canAnimate())play();
+ }
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else play()});
+ reduce.addEventListener?.('change',event=>{if(event.matches)pause();else play()});
+ if(source)source.addEventListener('error',()=>{hero.classList.add('hero-film-unavailable')},{once:true});
+})();
+</script>
+
 </body></html>
