@@ -103,6 +103,39 @@
  .hero .hero-film,.hero .river-canvas,.hero .hero-copy,.hero .orbit-stage{transform:none!important;opacity:1!important;will-change:auto}
 }
 
+
+/* NŪB cinematic entry refinement — visual depth without a framework or paid assets */
+.hero{background-color:#061714;background-image:radial-gradient(ellipse at 70% 43%,rgba(19,100,80,.32),transparent 46%),radial-gradient(ellipse at 28% 78%,rgba(221,121,87,.08),transparent 38%),linear-gradient(120deg,#061714 0%,#0a2520 58%,#071a17 100%)}
+.hero .hero-film{opacity:.34;filter:saturate(.9) contrast(1.12) brightness(.82);object-position:center 54%;mask-image:linear-gradient(90deg,rgba(0,0,0,.28),#000 34%,#000 76%,rgba(0,0,0,.28));-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.28),#000 34%,#000 76%,rgba(0,0,0,.28))}
+.hero:before{background:linear-gradient(90deg,rgba(4,19,16,.82),rgba(4,19,16,.42) 48%,rgba(4,19,16,.18) 72%,rgba(4,19,16,.48)),linear-gradient(0deg,var(--night),transparent 36%,rgba(4,19,16,.28))}
+.hero .hero-grid{min-height:min(72svh,760px)}
+.hero .hero-copy{position:relative;z-index:3;max-width:680px}
+.hero .hero h1,.hero h1{text-wrap:balance;text-shadow:0 4px 34px rgba(0,0,0,.18)}
+.hero .hero-desc{max-width:600px;text-wrap:pretty}
+.hero-provenance{display:flex;align-items:center;gap:9px;margin:18px 0 0;color:rgba(220,238,227,.68);font-size:.63rem;line-height:1.8;letter-spacing:.01em}
+.hero-provenance:before{content:"";display:inline-block;flex:0 0 18px;height:1px;background:var(--gold);opacity:.8}
+.hero-provenance span{max-width:520px}
+.hero .orbit-stage{transform:translate3d(var(--parallax-x,0px),calc(var(--parallax-y,0px) + var(--orbit-drift,0px)),0);transition:filter .4s ease}
+.hero .orbit{border-color:#68d6c044;box-shadow:inset 0 0 90px #68d6c010,0 0 100px #68d6c012}
+.hero .art-meta{color:#d7e5dc99}
+.hero .scroll-label{color:#d7e5dcaa}
+@media(max-width:760px){
+ .hero{padding-top:128px;padding-bottom:82px}
+ .hero .hero-grid{min-height:0;gap:0}
+ .hero .hero-film{opacity:.25;object-position:60% center;mask-image:linear-gradient(180deg,#000,rgba(0,0,0,.72) 46%,rgba(0,0,0,.14));-webkit-mask-image:linear-gradient(180deg,#000,rgba(0,0,0,.72) 46%,rgba(0,0,0,.14))}
+ .hero:before{background:linear-gradient(180deg,rgba(4,19,16,.44),rgba(4,19,16,.24) 30%,rgba(4,19,16,.7) 70%,var(--night))}
+ .hero h1{font-size:clamp(3rem,14vw,5.4rem);line-height:1.2;letter-spacing:-.055em}
+ .hero-provenance{font-size:.61rem;margin-top:14px}
+ .hero .orbit-stage{min-height:350px;transform:none}
+ .hero .orbit{width:min(74vw,360px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero .hero-film{display:none}
+ .hero .orbit-stage{transform:none!important;transition:none}
+ .hero-provenance{opacity:1}
+}
+@media(forced-colors:active){.hero-provenance:before{background:CanvasText}}
+
 </style>
 </head>
 <body>
@@ -129,6 +162,7 @@
 <div class="kicker"><b></b><span data-ar="أطلس حيّ للنوبة · مشروع مستقل متصل" data-en="A living atlas of Nubia · An independent companion">أطلس حيّ للنوبة · مشروع مستقل متصل</span></div>
 <h1 data-ar="النوبة، أبعد <span>من حدود الزمن.</span>" data-en="Nubia, beyond <span>the borders of time.</span>">النوبة، أبعد <span>من حدود الزمن.</span></h1>
 <p class="hero-desc" data-ar="NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة." data-en="NŪB extends the Nubia Odyssey journey into an explorable layer of knowledge: histories with many centres, a river that connects without flattening, languages, architecture and human memory — with sources visible rather than hidden behind beautiful images.">NŪB يوسّع رحلة Nubia Odyssey إلى طبقة معرفة قابلة للاستكشاف: تاريخ متعدّد المراكز، ونهر يربط ولا يختزل، ولغات وعمارة وذاكرة بشرية، ومصادر نُظهرها بدل أن نخفيها خلف جمال الصورة.</p>
+<p class="hero-provenance"><span data-ar="المشهد المتحرك تصوّر بصري فني؛ ليس تسجيلًا أرشيفيًا ولا شهادة نوبية موثّقة." data-en="The moving scene is an artistic visualisation, not archival footage or documented Nubian testimony.">المشهد المتحرك تصوّر بصري فني؛ ليس تسجيلًا أرشيفيًا ولا شهادة نوبية موثّقة.</span></p>
 <div class="hero-cta"><button class="button journey-launch" id="journey-open" type="button" aria-haspopup="dialog"><span data-ar="ابدأ الرحلة السينمائية" data-en="Begin the cinematic journey">ابدأ الرحلة السينمائية</span><span aria-hidden="true">↗</span></button><a class="button" href="./atlas.html"><span data-ar="ادخل الأطلس المعرفي" data-en="Enter the living atlas">ادخل الأطلس المعرفي</span><span aria-hidden="true">↙</span></a><a class="button ghost" href="./culture.html"><span data-ar="ذاكرة النوبة الحيّة" data-en="Living Nubian Heritage">ذاكرة النوبة الحيّة</span> ↗</a><a class="button ghost" href="./soundscape.html"><span data-ar="اختبر أطلس الصوت الحي" data-en="Enter the Sonic Atlas">اختبر أطلس الصوت الحي</span> ↗</a><a class="button ghost" href="https://nubia-odyssey-clean.vercel.app/#lineage" target="_blank" rel="noopener noreferrer" data-ar="ارجع إلى خط النسب في Odyssey ↗" data-en="Return to Odyssey lineage ↗">ارجع إلى خط النسب في Odyssey ↗</a></div>
 </div>
 <details class="voice-note"><summary data-ar="▶ اسمع مقدمة نُوب الصوتية" data-en="▶ Listen to the NŪB welcome narration">▶ اسمع مقدمة نُوب الصوتية</summary><audio controls preload="none" src="https://cdn.creativeclaw.co/u/f7a9f881/audio/b2c1e7c4-fa78-4499-9913-93a73194237d.mp3" aria-label="مقدمة صوتية مولّدة بالذكاء الاصطناعي عن التراث النوبي الحي"></audio><small data-ar="صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا." data-en="AI-generated concept narration; not an authentic Nubian testimony or recording.">صوت مولّد بالذكاء الاصطناعي لأغراض التصميم؛ ليس شهادة أو تسجيلًا نوبيًا أصليًا.</small></details>
